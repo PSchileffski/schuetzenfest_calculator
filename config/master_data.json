@@ -1,10 +1,10 @@
 {
   "products": [
-    { "id": "beer", "name": "Bier (0.3l)", "sales_price": 2.50, "purchase_price": 1.10 },
-    { "id": "softdrink", "name": "Softdrink (0.3l)", "sales_price": 2.00, "purchase_price": 0.80 },
-    { "id": "water", "name": "Wasser (0.3l)", "sales_price": 1.50, "purchase_price": 0.40 },
-    { "id": "longdrink", "name": "Longdrink", "sales_price": 4.50, "purchase_price": 1.50 },
-    { "id": "shot", "name": "Schnaps", "sales_price": 2.00, "purchase_price": 0.60 }
+    { "id": "beer", "name": "Bier (0.2l)", "sales_price": 2.50, "purchase_price": 0.75 },
+    { "id": "softdrink", "name": "Softdrink (0.2l)", "sales_price": 2.00, "purchase_price": 0.50 },
+    { "id": "water", "name": "Wasser (0.2l)", "sales_price": 2.00, "purchase_price": 0.30 },
+    { "id": "longdrink", "name": "Longdrink (4cl)", "sales_price": 5.00, "purchase_price": 1.30 },
+    { "id": "shot", "name": "Schnaps (2cl)", "sales_price": 2.50, "purchase_price": 0.40 }
   ],
   "personas": [
     {
@@ -12,9 +12,9 @@
       "name": "Schützenbruder",
       "description": "Trinkfest, meist Bier",
       "consumption": {
-        "beer": 12.0,
-        "shot": 3.0,
-        "water": 1.0
+        "beer": 15.0,
+        "shot": 2.0,
+        "water": 2.0
       }
     },
     {
@@ -22,8 +22,8 @@
       "name": "Besucher (Normal)",
       "description": "Gemischtes Publikum",
       "consumption": {
-        "beer": 4.0,
-        "softdrink": 2.0,
+        "beer": 8.0,
+        "softdrink": 3.0,
         "water": 1.0
       }
     },
@@ -32,9 +32,12 @@
       "name": "Zuschauer / Kurzbesucher",
       "description": "Kommt nur kurz gucken",
       "consumption": {
+        "beer": 2.0,
         "softdrink": 1.0,
-        "water": 0.5,
-        "beer": 0.5
+        "water": 0.5
+      },
+      "module_adoption_rates": {
+        "catering": 0.2
       }
     },
     {
@@ -42,9 +45,12 @@
       "name": "Teenie / Jugend",
       "description": "Vorgeglüht, trinkt günstig",
       "consumption": {
-        "beer": 3.0,
+        "beer": 2.0,
         "softdrink": 1.0,
         "shot": 1.0
+      },
+      "module_adoption_rates": {
+        "catering": 0.3
       }
     }
   ]
