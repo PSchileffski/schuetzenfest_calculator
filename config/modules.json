@@ -8,68 +8,172 @@
         "id": "local_brass_band",
         "name": "Blaskapelle / Musikverein",
         "cost_items": [
-          { "name": "Gage Musikverein", "amount": 600.0, "cost_type": "fixed" },
-          { "name": "Verpflegung Musiker", "amount": 180.0, "cost_type": "fixed" },
-          { "name": "GEMA Gebühr", "amount": 180.0, "cost_type": "fixed" }
+          {
+            "name": "Gage Musikverein",
+            "amount": 600.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Verpflegung Musiker",
+            "amount": 180.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "GEMA Gebühr",
+            "amount": 180.0,
+            "cost_type": "fixed"
+          }
         ]
       },
       {
         "id": "party_band_regional",
         "name": "Partyband Regional",
         "cost_items": [
-          { "name": "Gage Band", "amount": 1800.0, "cost_type": "fixed" },
-          { "name": "Technik & PA-Anlage", "amount": 400.0, "cost_type": "fixed" },
-          { "name": "Catering Band", "amount": 120.0, "cost_type": "fixed" },
-          { "name": "GEMA Gebühr", "amount": 350.0, "cost_type": "fixed" },
-          { "name": "Anreise", "amount": 200.0, "cost_type": "fixed" }
+          {
+            "name": "Gage Band",
+            "amount": 1800.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Technik & PA-Anlage",
+            "amount": 400.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Catering Band",
+            "amount": 120.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "GEMA Gebühr",
+            "amount": 350.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Anreise",
+            "amount": 200.0,
+            "cost_type": "fixed"
+          }
         ]
       },
       {
         "id": "cover_band_premium",
         "name": "Coverband Premium (überregional bekannt)",
         "cost_items": [
-          { "name": "Gage Band", "amount": 3500.0, "cost_type": "fixed" },
-          { "name": "Technik, Licht & Tontechnik", "amount": 800.0, "cost_type": "fixed" },
-          { "name": "Catering & Backstage", "amount": 250.0, "cost_type": "fixed" },
-          { "name": "GEMA Gebühr", "amount": 550.0, "cost_type": "fixed" },
-          { "name": "Anreise", "amount": 400.0, "cost_type": "fixed" }
+          {
+            "name": "Gage Band",
+            "amount": 3500.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Technik, Licht & Tontechnik",
+            "amount": 800.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Catering & Backstage",
+            "amount": 250.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "GEMA Gebühr",
+            "amount": 550.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Anreise",
+            "amount": 400.0,
+            "cost_type": "fixed"
+          }
         ]
       },
       {
         "id": "dj_party",
         "name": "DJ Party / Allround",
         "cost_items": [
-          { "name": "DJ Gage (4-6 Std.)", "amount": 600.0, "cost_type": "fixed" },
-          { "name": "Technik & Lichtanlage", "amount": 350.0, "cost_type": "fixed" },
-          { "name": "GEMA Gebühr", "amount": 250.0, "cost_type": "fixed" }
+          {
+            "name": "DJ Gage (4-6 Std.)",
+            "amount": 600.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Technik & Lichtanlage",
+            "amount": 350.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "GEMA Gebühr",
+            "amount": 250.0,
+            "cost_type": "fixed"
+          }
         ]
       },
       {
         "id": "dj_premium_club",
         "name": "DJ Premium",
         "cost_items": [
-          { "name": "DJ Gage", "amount": 1500.0, "cost_type": "fixed" },
-          { "name": "Technik Premium (Licht, Effekte)", "amount": 600.0, "cost_type": "fixed" },
-          { "name": "GEMA Gebühr", "amount": 350.0, "cost_type": "fixed" },
-          { "name": "Anreise & Hotel", "amount": 250.0, "cost_type": "fixed" }
+          {
+            "name": "DJ Gage",
+            "amount": 1500.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Technik Premium (Licht, Effekte)",
+            "amount": 600.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "GEMA Gebühr",
+            "amount": 350.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Anreise & Hotel",
+            "amount": 250.0,
+            "cost_type": "fixed"
+          }
         ]
       },
       {
         "id": "alleinunterhalter",
         "name": "Alleinunterhalter (Keyboard/Gesang)",
         "cost_items": [
-          { "name": "Gage Alleinunterhalter", "amount": 1200.0, "cost_type": "fixed" },
-          { "name": "Technik (eigene Anlage)", "amount": 0.0, "cost_type": "fixed" },
-          { "name": "Verpflegung", "amount": 40.0, "cost_type": "fixed" },
-          { "name": "GEMA Gebühr", "amount": 150.0, "cost_type": "fixed" }
+          {
+            "name": "Gage Alleinunterhalter",
+            "amount": 1200.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Technik (eigene Anlage)",
+            "amount": 0.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Verpflegung",
+            "amount": 40.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "GEMA Gebühr",
+            "amount": 150.0,
+            "cost_type": "fixed"
+          }
         ]
       },
       {
         "id": "music_streaming",
         "name": "Musikanlage / Streaming (selbst betreut)",
         "cost_items": [
-          { "name": "Musikanlage REZ", "amount": 50.0, "cost_type": "fixed" },
-          { "name": "GEMA Gebühr (Hintergrundmusik)", "amount": 100.0, "cost_type": "fixed" }
+          {
+            "name": "Musikanlage REZ",
+            "amount": 50.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "GEMA Gebühr (Hintergrundmusik)",
+            "amount": 100.0,
+            "cost_type": "fixed"
+          }
         ]
       },
       {
@@ -93,17 +197,37 @@
         "id": "ten_euro_entry",
         "name": "10 € Eintritt",
         "cost_items": [
-          { "name": "Eintrittsbändchen", "amount": 0.30, "cost_type": "per_visitor" },
-          { "name": "GEMA Eintrittsanteil (7% nach VR-Ö)", "amount": 0.70, "cost_type": "per_visitor" }
+          {
+            "name": "Eintrittsbändchen",
+            "amount": 0.3,
+            "cost_type": "per_visitor"
+          },
+          {
+            "name": "GEMA Eintrittsanteil (7% nach VR-Ö)",
+            "amount": 0.7,
+            "cost_type": "per_visitor"
+          }
         ]
       },
       {
         "id": "fifteen_euro_voucher",
         "name": "15 € Eintritt (5 € Verzehrgutschein)",
         "cost_items": [
-          { "name": "Eintrittsbändchen", "amount": 0.30, "cost_type": "per_visitor" },
-          { "name": "Verzehrgutscheine (Druck)", "amount": 0.50, "cost_type": "per_visitor" },
-          { "name": "GEMA Eintrittsanteil (7% nach VR-Ö)", "amount": 1.05, "cost_type": "per_visitor" }
+          {
+            "name": "Eintrittsbändchen",
+            "amount": 0.3,
+            "cost_type": "per_visitor"
+          },
+          {
+            "name": "Verzehrgutscheine (Druck)",
+            "amount": 0.5,
+            "cost_type": "per_visitor"
+          },
+          {
+            "name": "GEMA Eintrittsanteil (7% nach VR-Ö)",
+            "amount": 1.05,
+            "cost_type": "per_visitor"
+          }
         ]
       }
     ]
@@ -117,26 +241,58 @@
         "id": "security_basic",
         "name": "Basis-Sicherheit (2 Personen, 6 Std.)",
         "cost_items": [
-          { "name": "2 Securitykräfte á 6 Std. (35 €/Std.)", "amount": 420.0, "cost_type": "fixed" },
-          { "name": "Koordination & Briefing", "amount": 50.0, "cost_type": "fixed" }
+          {
+            "name": "2 Securitykräfte á 6 Std. (35 €/Std.)",
+            "amount": 420.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Koordination & Briefing",
+            "amount": 50.0,
+            "cost_type": "fixed"
+          }
         ]
       },
       {
         "id": "security_standard",
         "name": "Standard-Sicherheit (3 Personen, 6 Std.)",
         "cost_items": [
-          { "name": "3 Securitykräfte á 6 Std. (35 €/Std.)", "amount": 630.0, "cost_type": "fixed" },
-          { "name": "Koordination & Briefing", "amount": 80.0, "cost_type": "fixed" },
-          { "name": "Funkgeräte (3 Stück)", "amount": 45.0, "cost_type": "fixed" }
+          {
+            "name": "3 Securitykräfte á 6 Std. (35 €/Std.)",
+            "amount": 630.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Koordination & Briefing",
+            "amount": 80.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Funkgeräte (3 Stück)",
+            "amount": 45.0,
+            "cost_type": "fixed"
+          }
         ]
       },
       {
         "id": "security_extended",
         "name": "Erweiterte Sicherheit (4 Personen, 6 Std.)",
         "cost_items": [
-          { "name": "4 Securitykräfte á 6 Std. (35 €/Std.)", "amount": 840.0, "cost_type": "fixed" },
-          { "name": "Koordination & Briefing", "amount": 100.0, "cost_type": "fixed" },
-          { "name": "Funkgeräte & Ausrüstung", "amount": 60.0, "cost_type": "fixed" }
+          {
+            "name": "4 Securitykräfte á 6 Std. (35 €/Std.)",
+            "amount": 840.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Koordination & Briefing",
+            "amount": 100.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Funkgeräte & Ausrüstung",
+            "amount": 60.0,
+            "cost_type": "fixed"
+          }
         ]
       },
       {
@@ -148,7 +304,11 @@
         "id": "entry_security",
         "name": "Eingangskontrolle (ohne externe Security)",
         "cost_items": [
-          { "name": "Verpflegung Helfer", "amount": 50.0, "cost_type": "fixed" }
+          {
+            "name": "Verpflegung Helfer",
+            "amount": 50.0,
+            "cost_type": "fixed"
+          }
         ]
       }
     ]
@@ -162,41 +322,85 @@
         "id": "tent_5_gebund",
         "name": "Festzelt 5 Gebund (20m x 12m)",
         "cost_items": [
-          { "name": "Miete Festzelt inkl. Holzboden (5 x 4m Gebund)", "amount": 4700.0, "cost_type": "fixed" },
-          { "name": "Auf- und Abbau", "amount": 800.0, "cost_type": "fixed" },
-          { "name": "Transport", "amount": 400.0, "cost_type": "fixed" }
+          {
+            "name": "Miete Festzelt inkl. Holzboden (5 x 4m Gebund)",
+            "amount": 4700.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Auf- und Abbau",
+            "amount": 800.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Transport",
+            "amount": 400.0,
+            "cost_type": "fixed"
+          }
         ]
       },
       {
         "id": "tent_4_gebund",
         "name": "Festzelt 4 Gebund (16m x 12m)",
         "cost_items": [
-          { "name": "Miete Festzelt inkl. Holzboden (4 x 4m Gebund)", "amount": 3750.0, "cost_type": "fixed" },
-          { "name": "Auf- und Abbau", "amount": 650.0, "cost_type": "fixed" },
-          { "name": "Transport", "amount": 350.0, "cost_type": "fixed" }
+          {
+            "name": "Miete Festzelt inkl. Holzboden (4 x 4m Gebund)",
+            "amount": 3750.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Auf- und Abbau",
+            "amount": 650.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Transport",
+            "amount": 350.0,
+            "cost_type": "fixed"
+          }
         ]
       },
       {
         "id": "tent_stadtverband",
         "name": "Festzelt Stadtverband (vergünstigt)",
         "cost_items": [
-          { "name": "Miete Festzelt inkl. Boden (Stadtverband)", "amount": 1800.0, "cost_type": "fixed" },
-          { "name": "Auf- und Abbau (Eigenleistung)", "amount": 200.0, "cost_type": "fixed" }
+          {
+            "name": "Miete Festzelt inkl. Boden (Stadtverband)",
+            "amount": 1800.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Auf- und Abbau (Eigenleistung)",
+            "amount": 200.0,
+            "cost_type": "fixed"
+          }
         ]
       },
       {
         "id": "party_tent_rental",
         "name": "Große Partyzelte (Komplett-Service)",
         "cost_items": [
-          { "name": "Miete Partyzelte", "amount": 800.0, "cost_type": "fixed" },
-          { "name": "Auf- und Abbau inkl. Service", "amount": 600.0, "cost_type": "fixed" }
+          {
+            "name": "Miete Partyzelte",
+            "amount": 800.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Auf- und Abbau inkl. Service",
+            "amount": 600.0,
+            "cost_type": "fixed"
+          }
         ]
       },
       {
         "id": "existing_hall",
         "name": "Nutzung nur REZ",
         "cost_items": [
-          { "name": "Nutzungsgebühr", "amount": 800.0, "cost_type": "fixed" }
+          {
+            "name": "Nutzungsgebühr",
+            "amount": 800.0,
+            "cost_type": "fixed"
+          }
         ]
       }
     ]
@@ -210,41 +414,133 @@
         "id": "tent_full_infra",
         "name": "Festzelt Komplett-Infrastruktur",
         "cost_items": [
-          { "name": "Toilettenwagen (4 Tage Miete)", "amount": 950.0, "cost_type": "fixed" },
-          { "name": "Müllcontainer & Entsorgung", "amount": 280.0, "cost_type": "fixed" },
-          { "name": "Strom-Anschluss & Verteiler", "amount": 350.0, "cost_type": "fixed" },
-          { "name": "Wasseranschluss", "amount": 180.0, "cost_type": "fixed" },
-          { "name": "Dieselheizgerät (4 Tage á 140 €)", "amount": 560.0, "cost_type": "fixed" },
-          { "name": "Heizöl (ca. 400 Liter á 1,20 €)", "amount": 480.0, "cost_type": "fixed" },
-          { "name": "Heizölbevorratung & Schläuche", "amount": 120.0, "cost_type": "fixed" },
-          { "name": "Lieferung & Abholung Heizgerät", "amount": 180.0, "cost_type": "fixed" },
-          { "name": "Endreinigung Festzelt", "amount": 450.0, "cost_type": "fixed" }
+          {
+            "name": "REZ Miete 4 Tage",
+            "amount": 800.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Müllcontainer & Entsorgung",
+            "amount": 100.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Stromkosten",
+            "amount": 200.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Wasser",
+            "amount": 20.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Dieselheizgerät (4 Tage á 140 €)",
+            "amount": 560.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Heizöl (ca. 400 Liter á 1,20 €)",
+            "amount": 480.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Heizölbevorratung & Schläuche",
+            "amount": 120.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Lieferung & Abholung Heizgerät",
+            "amount": 180.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Endreinigung Festzelt",
+            "amount": 150.0,
+            "cost_type": "fixed"
+          }
         ]
       },
       {
         "id": "tent_rez_infra",
         "name": "Festzelt + REZ-Nutzung",
         "cost_items": [
-          { "name": "Miete REZ (Kirchengemeinde, 4 Tage)", "amount": 800.0, "cost_type": "fixed" },
-          { "name": "Reinigung REZ (Toiletten & Räume)", "amount": 380.0, "cost_type": "fixed" },
-          { "name": "Müllcontainer & Entsorgung", "amount": 280.0, "cost_type": "fixed" },
-          { "name": "Strom-Anschluss Festzelt", "amount": 350.0, "cost_type": "fixed" },
-          { "name": "Wasseranschluss Festzelt", "amount": 180.0, "cost_type": "fixed" },
-          { "name": "Dieselheizgerät (4 Tage á 140 €)", "amount": 560.0, "cost_type": "fixed" },
-          { "name": "Heizöl (ca. 400 Liter á 1,20 €)", "amount": 480.0, "cost_type": "fixed" },
-          { "name": "Heizölbevorratung & Schläuche", "amount": 120.0, "cost_type": "fixed" },
-          { "name": "Lieferung & Abholung Heizgerät", "amount": 180.0, "cost_type": "fixed" },
-          { "name": "Endreinigung Festzelt", "amount": 450.0, "cost_type": "fixed" }
+          {
+            "name": "Miete REZ (Kirchengemeinde, 4 Tage)",
+            "amount": 800.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Reinigung REZ (Toiletten & Räume)",
+            "amount": 380.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Müllcontainer & Entsorgung",
+            "amount": 280.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Strom-Anschluss Festzelt",
+            "amount": 350.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Wasseranschluss Festzelt",
+            "amount": 180.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Dieselheizgerät (4 Tage á 140 €)",
+            "amount": 560.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Heizöl (ca. 400 Liter á 1,20 €)",
+            "amount": 480.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Heizölbevorratung & Schläuche",
+            "amount": 120.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Lieferung & Abholung Heizgerät",
+            "amount": 180.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Endreinigung Festzelt",
+            "amount": 450.0,
+            "cost_type": "fixed"
+          }
         ]
       },
       {
         "id": "rez_only_infra",
         "name": "Nur REZ (ohne Festzelt)",
         "cost_items": [
-          { "name": "Miete REZ (Kirchengemeinde, 4 Tage)", "amount": 800.0, "cost_type": "fixed" },
-          { "name": "Reinigung REZ (Toiletten & Räume)", "amount": 380.0, "cost_type": "fixed" },
-          { "name": "Müllentsorgung", "amount": 150.0, "cost_type": "fixed" },
-          { "name": "Strom & Wasser (Pauschale)", "amount": 200.0, "cost_type": "fixed" }
+          {
+            "name": "Miete REZ (Kirchengemeinde, 4 Tage)",
+            "amount": 800.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Reinigung REZ (Toiletten & Räume)",
+            "amount": 380.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Müllentsorgung",
+            "amount": 150.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Strom & Wasser (Pauschale)",
+            "amount": 200.0,
+            "cost_type": "fixed"
+          }
         ]
       }
     ]
@@ -258,21 +554,57 @@
         "id": "full_rental_gfgh",
         "name": "Vollausstattung (Miete über Verleger)",
         "cost_items": [
-          { "name": "Kühlwagen", "amount": 450.0, "cost_type": "fixed" },
-          { "name": "Thekenlandschaft & Zapftechnik (inkl. CO2)", "amount": 850.0, "cost_type": "fixed" },
-          { "name": "Festzeltgarnituren (60 Sets á 14€)", "amount": 840.0, "cost_type": "fixed" },
-          { "name": "Stehtische (15 Stk)", "amount": 180.0, "cost_type": "fixed" },
-          { "name": "Gläser & Spülboys (Miete/Reinigung)", "amount": 350.0, "cost_type": "fixed" }
+          {
+            "name": "Kühlwagen",
+            "amount": 450.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Thekenlandschaft & Zapftechnik (inkl. CO2)",
+            "amount": 850.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Festzeltgarnituren (60 Sets á 14€)",
+            "amount": 840.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Stehtische (15 Stk)",
+            "amount": 180.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Gläser & Spülboys (Miete/Reinigung)",
+            "amount": 350.0,
+            "cost_type": "fixed"
+          }
         ]
       },
       {
         "id": "partial_equipment",
         "name": "Teilausstattung (Vereinsbestand + Zumietung)",
         "cost_items": [
-          { "name": "Kühlwagen", "amount": 450.0, "cost_type": "fixed" },
-          { "name": "Zumietung Mobiliar (Spitzenabdeckung)", "amount": 400.0, "cost_type": "fixed" },
-          { "name": "Wartung/CO2 eigene Zapfanlagen", "amount": 200.0, "cost_type": "fixed" },
-          { "name": "Gläser (Bruch/Schwund)", "amount": 150.0, "cost_type": "fixed" }
+          {
+            "name": "Kühlwagen",
+            "amount": 450.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Zumietung Mobiliar (Spitzenabdeckung)",
+            "amount": 400.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Wartung/CO2 eigene Zapfanlagen",
+            "amount": 200.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Gläser (Bruch/Schwund)",
+            "amount": 150.0,
+            "cost_type": "fixed"
+          }
         ]
       }
     ]
@@ -286,17 +618,37 @@
         "id": "full_decoration",
         "name": "Volle Festdekoration",
         "cost_items": [
-          { "name": "Girlanden & Wimpel", "amount": 300.0, "cost_type": "fixed" },
-          { "name": "Tischdekoration", "amount": 250.0, "cost_type": "fixed" },
-          { "name": "Blumenschmuck", "amount": 200.0, "cost_type": "fixed" }
+          {
+            "name": "Girlanden & Wimpel",
+            "amount": 300.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Tischdekoration",
+            "amount": 250.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Blumenschmuck",
+            "amount": 200.0,
+            "cost_type": "fixed"
+          }
         ]
       },
       {
         "id": "minimal_decoration",
         "name": "Basis-Dekoration",
         "cost_items": [
-          { "name": "Girlanden & Wimpel", "amount": 150.0, "cost_type": "fixed" },
-          { "name": "Tischdekoration", "amount": 100.0, "cost_type": "fixed" }
+          {
+            "name": "Girlanden & Wimpel",
+            "amount": 150.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Tischdekoration",
+            "amount": 100.0,
+            "cost_type": "fixed"
+          }
         ]
       },
       {
@@ -315,7 +667,11 @@
         "id": "external_food_truck_neutral",
         "name": "Externer Imbiss (Kostenneutral)",
         "cost_items": [
-          { "name": "Platzgeld/Strom (Verrechnet)", "amount": 0.0, "cost_type": "fixed" }
+          {
+            "name": "Platzgeld/Strom (Verrechnet)",
+            "amount": 0.0,
+            "cost_type": "fixed"
+          }
         ],
         "revenue_items": []
       },
@@ -323,59 +679,135 @@
         "id": "external_food_truck_provision",
         "name": "Externer Imbiss (mit Gewinnbeteiligung)",
         "cost_items": [
-          { "name": "Bereitstellung Strom/Wasser (Anschluss)", "amount": 120.0, "cost_type": "fixed" },
-          { "name": "Müllentsorgung Anteil", "amount": 80.0, "cost_type": "fixed" }
+          {
+            "name": "Bereitstellung Strom/Wasser (Anschluss)",
+            "amount": 120.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Müllentsorgung Anteil",
+            "amount": 80.0,
+            "cost_type": "fixed"
+          }
         ],
         "revenue_items": [
-          { "name": "Gewinnbeteiligung Imbiss", "amount": 0.20, "revenue_type": "per_visitor" }
+          {
+            "name": "Gewinnbeteiligung Imbiss",
+            "amount": 0.2,
+            "revenue_type": "per_visitor"
+          }
         ]
       },
       {
         "id": "self_managed_pro",
         "name": "Eigenregie (Miet-Küche & Personal)",
         "cost_items": [
-          { "name": "Miete Küchen-Equipment (Friteusen/Bräter)", "amount": 450.0, "cost_type": "fixed" },
-          { "name": "Küchenpersonal (Externe Köche)", "amount": 600.0, "cost_type": "fixed" },
-          { "name": "Wareneinsatz Speisen", "amount": 3.20, "cost_type": "per_visitor" },
-          { "name": "Verbrauchsmaterial (Pappe/Besteck)", "amount": 0.30, "cost_type": "per_visitor" }
+          {
+            "name": "Miete Küchen-Equipment (Friteusen/Bräter)",
+            "amount": 450.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Küchenpersonal (Externe Köche)",
+            "amount": 600.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Wareneinsatz Speisen",
+            "amount": 3.2,
+            "cost_type": "per_visitor"
+          },
+          {
+            "name": "Verbrauchsmaterial (Pappe/Besteck)",
+            "amount": 0.3,
+            "cost_type": "per_visitor"
+          }
         ],
         "revenue_items": [
-          { "name": "Umsatz Speisenverkauf", "amount": 7.50, "revenue_type": "per_visitor" }
+          {
+            "name": "Umsatz Speisenverkauf",
+            "amount": 7.5,
+            "revenue_type": "per_visitor"
+          }
         ]
       },
       {
         "id": "breakfast_buffet",
         "name": "Frühstücksbuffet (Caterer-Service)",
         "cost_items": [
-          { "name": "Buffet-Preis pro Person (All-In)", "amount": 15.50, "cost_type": "per_visitor" },
-          { "name": "Service-Pauschale", "amount": 200.0, "cost_type": "fixed" }
+          {
+            "name": "Buffet-Preis pro Person (All-In)",
+            "amount": 15.5,
+            "cost_type": "per_visitor"
+          },
+          {
+            "name": "Service-Pauschale",
+            "amount": 200.0,
+            "cost_type": "fixed"
+          }
         ],
         "revenue_items": [
-          { "name": "Verkauf Frühstückskarten", "amount": 18.00, "revenue_type": "per_visitor" }
+          {
+            "name": "Verkauf Frühstückskarten",
+            "amount": 18.0,
+            "revenue_type": "per_visitor"
+          }
         ]
       },
       {
         "id": "coffee_cake_volunteer",
         "name": "Kaffee & Kuchen (Vereins-Regie)",
         "cost_items": [
-          { "name": "Kaffee/Milch/Zucker", "amount": 100.0, "cost_type": "fixed" },
-          { "name": "Geschirr & Reinigung", "amount": 80.0, "cost_type": "fixed" }
+          {
+            "name": "Kaffee/Milch/Zucker",
+            "amount": 100.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Geschirr & Reinigung",
+            "amount": 80.0,
+            "cost_type": "fixed"
+          }
         ],
         "revenue_items": [
-          { "name": "Umsatz Cafeteria", "amount": 4.50, "revenue_type": "per_visitor" }
+          {
+            "name": "Umsatz Cafeteria",
+            "amount": 4.5,
+            "revenue_type": "per_visitor"
+          }
         ]
       },
       {
         "id": "club_grill_simple",
         "name": "Vereinsgrill (Wurst & Steak im Brötchen)",
         "cost_items": [
-          { "name": "Wareneinsatz (Wurst/Steak/Brötchen)", "amount": 2.00, "cost_type": "per_visitor" },
-          { "name": "Grillkohle/Gas", "amount": 50.0, "cost_type": "fixed" },
-          { "name": "Reinigung Grill & Zubehör", "amount": 40.0, "cost_type": "fixed" },
-          { "name": "Verbrauchsmaterial (Servietten/Pappe)", "amount": 0.10, "cost_type": "per_visitor" }
+          {
+            "name": "Wareneinsatz (Wurst/Steak/Brötchen)",
+            "amount": 2.0,
+            "cost_type": "per_visitor"
+          },
+          {
+            "name": "Grillkohle/Gas",
+            "amount": 50.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Reinigung Grill & Zubehör",
+            "amount": 40.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Verbrauchsmaterial (Servietten/Pappe)",
+            "amount": 0.1,
+            "cost_type": "per_visitor"
+          }
         ],
         "revenue_items": [
-          { "name": "Umsatz Grillstand", "amount": 5.00, "revenue_type": "per_visitor" }
+          {
+            "name": "Umsatz Grillstand",
+            "amount": 5.0,
+            "revenue_type": "per_visitor"
+          }
         ]
       },
       {
@@ -395,9 +827,21 @@
         "id": "kids_fun",
         "name": "Kinderbelustigung (Hüpfburg & Co.)",
         "cost_items": [
-          { "name": "Miete Profi-Hüpfburg", "amount": 300.0, "cost_type": "fixed" },
-          { "name": "Betreuung/Animation", "amount": 150.0, "cost_type": "fixed" },
-          { "name": "Preise & Süßwaren", "amount": 100.0, "cost_type": "fixed" }
+          {
+            "name": "Miete Profi-Hüpfburg",
+            "amount": 300.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Betreuung/Animation",
+            "amount": 150.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Preise & Süßwaren",
+            "amount": 100.0,
+            "cost_type": "fixed"
+          }
         ],
         "revenue_items": []
       },
@@ -405,8 +849,17 @@
         "id": "happy_hour_free_beer",
         "name": "Happy Hour (50l Freibier)",
         "cost_items": [
-          { "name": "50l Fassbier (Sponsoring/EK)", "amount": 180.0, "cost_type": "fixed" },
-          { "name": "Verlorener Umsatz (Kalkulatorisch)", "amount": 0.0, "cost_type": "fixed", "description": "Werbewirkung überwiegt" }
+          {
+            "name": "50l Fassbier (Sponsoring/EK)",
+            "amount": 180.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Verlorener Umsatz (Kalkulatorisch)",
+            "amount": 0.0,
+            "cost_type": "fixed",
+            "description": "Werbewirkung überwiegt"
+          }
         ],
         "revenue_items": []
       },
@@ -414,21 +867,43 @@
         "id": "happy_hour_discount",
         "name": "Happy Hour (1 Std. 50% Rabatt)",
         "cost_items": [
-          { "name": "Rabatt-Subventionierung", "amount": 2.50, "cost_type": "per_visitor", "description": "Ca. 2 Getränke á 50% Rabatt" }
+          {
+            "name": "Rabatt-Subventionierung",
+            "amount": 2.5,
+            "cost_type": "per_visitor",
+            "description": "Ca. 2 Getränke á 50% Rabatt"
+          }
         ],
         "revenue_items": [
-          { "name": "Volumen-Steigerung", "amount": 1.00, "revenue_type": "per_visitor", "description": "Mehrkonsum durch Rabatt" }
+          {
+            "name": "Volumen-Steigerung",
+            "amount": 1.0,
+            "revenue_type": "per_visitor",
+            "description": "Mehrkonsum durch Rabatt"
+          }
         ]
       },
       {
         "id": "tombola",
         "name": "Große Tombola",
         "cost_items": [
-          { "name": "Sachpreise & Gutscheine", "amount": 400.0, "cost_type": "fixed" },
-          { "name": "Lose & Druckkosten", "amount": 50.0, "cost_type": "fixed" }
+          {
+            "name": "Sachpreise & Gutscheine",
+            "amount": 400.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Lose & Druckkosten",
+            "amount": 50.0,
+            "cost_type": "fixed"
+          }
         ],
         "revenue_items": [
-          { "name": "Losverkauf", "amount": 1.50, "revenue_type": "per_visitor" }
+          {
+            "name": "Losverkauf",
+            "amount": 1.5,
+            "revenue_type": "per_visitor"
+          }
         ]
       },
       {
@@ -448,16 +923,32 @@
         "id": "full_transport",
         "name": "Komplett-Logistik",
         "cost_items": [
-          { "name": "LKW Anmietung", "amount": 400.0, "cost_type": "fixed" },
-          { "name": "Sprit & Maut", "amount": 150.0, "cost_type": "fixed" },
-          { "name": "Helfer Fahrtkosten", "amount": 200.0, "cost_type": "fixed" }
+          {
+            "name": "LKW Anmietung",
+            "amount": 400.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Sprit & Maut",
+            "amount": 150.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Helfer Fahrtkosten",
+            "amount": 200.0,
+            "cost_type": "fixed"
+          }
         ]
       },
       {
         "id": "minimal_transport",
         "name": "Basis-Transport",
         "cost_items": [
-          { "name": "Sprit & Fahrtkosten", "amount": 150.0, "cost_type": "fixed" }
+          {
+            "name": "Sprit & Fahrtkosten",
+            "amount": 150.0,
+            "cost_type": "fixed"
+          }
         ]
       },
       {
@@ -476,35 +967,84 @@
         "id": "volunteers_friday",
         "name": "Ehrenamtlich (Vereinsmitglieder)",
         "cost_items": [
-          { "name": "Verpflegung Thekenteam (Bier/Essen)", "amount": 50.0, "cost_type": "fixed", "description": "Freier Verzehr während Schicht" },
-          { "name": "Schwund/Fehlbeträge (Kalkulatorisch)", "amount": 50.0, "cost_type": "fixed", "description": "Erfahrungswert bei Laien" }
+          {
+            "name": "Verpflegung Thekenteam (Bier/Essen)",
+            "amount": 50.0,
+            "cost_type": "fixed",
+            "description": "Freier Verzehr während Schicht"
+          },
+          {
+            "name": "Schwund/Fehlbeträge (Kalkulatorisch)",
+            "amount": 50.0,
+            "cost_type": "fixed",
+            "description": "Erfahrungswert bei Laien"
+          }
         ]
       },
       {
         "id": "pro_small",
         "name": "Profi-Team Klein (1 Zapfer + 3 Kellner)",
         "cost_items": [
-          { "name": "Zapfmeister (8 Std. á 30€)", "amount": 240.0, "cost_type": "fixed" },
-          { "name": "1 Kellner (8 Std. á 20€)", "amount": 160.0, "cost_type": "fixed" },
-          { "name": "2 Kellner (6 Std. á 20€)", "amount": 240.0, "cost_type": "fixed", "description": "Früherer Feierabend (-2 Std)" }
+          {
+            "name": "Zapfmeister (8 Std. á 30€)",
+            "amount": 240.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "1 Kellner (8 Std. á 20€)",
+            "amount": 160.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "2 Kellner (6 Std. á 20€)",
+            "amount": 240.0,
+            "cost_type": "fixed",
+            "description": "Früherer Feierabend (-2 Std)"
+          }
         ]
       },
       {
         "id": "pro_medium",
         "name": "Profi-Team Mittel (1 Zapfer + 4 Kellner)",
         "cost_items": [
-          { "name": "Zapfmeister (8 Std. á 30€)", "amount": 240.0, "cost_type": "fixed" },
-          { "name": "2 Kellner (8 Std. á 20€)", "amount": 320.0, "cost_type": "fixed" },
-          { "name": "2 Kellner (6 Std. á 20€)", "amount": 240.0, "cost_type": "fixed", "description": "Früherer Feierabend (-2 Std)" }
+          {
+            "name": "Zapfmeister (8 Std. á 30€)",
+            "amount": 240.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "2 Kellner (8 Std. á 20€)",
+            "amount": 320.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "2 Kellner (6 Std. á 20€)",
+            "amount": 240.0,
+            "cost_type": "fixed",
+            "description": "Früherer Feierabend (-2 Std)"
+          }
         ]
       },
       {
         "id": "pro_large",
         "name": "Profi-Team Groß (1 Zapfer + 6 Kellner)",
         "cost_items": [
-          { "name": "Zapfmeister (8 Std. á 30€)", "amount": 240.0, "cost_type": "fixed" },
-          { "name": "4 Kellner (8 Std. á 20€)", "amount": 640.0, "cost_type": "fixed" },
-          { "name": "2 Kellner (6 Std. á 20€)", "amount": 240.0, "cost_type": "fixed", "description": "Früherer Feierabend (-2 Std)" }
+          {
+            "name": "Zapfmeister (8 Std. á 30€)",
+            "amount": 240.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "4 Kellner (8 Std. á 20€)",
+            "amount": 640.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "2 Kellner (6 Std. á 20€)",
+            "amount": 240.0,
+            "cost_type": "fixed",
+            "description": "Früherer Feierabend (-2 Std)"
+          }
         ]
       },
       {
@@ -523,10 +1063,26 @@
         "id": "admin_basic",
         "name": "Basis-Verwaltung (Pflichtprogramm)",
         "cost_items": [
-          { "name": "Genehmigungen (Schanklizenz/Ordnungsamt)", "amount": 180.0, "cost_type": "fixed" },
-          { "name": "Veranstalter-Haftpflichtversicherung", "amount": 350.0, "cost_type": "fixed" },
-          { "name": "Büromaterial & Porto", "amount": 50.0, "cost_type": "fixed" },
-          { "name": "Werbung (Rein Online/Social Media)", "amount": 50.0, "cost_type": "fixed" }
+          {
+            "name": "Genehmigungen (Schanklizenz/Ordnungsamt)",
+            "amount": 180.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Veranstalter-Haftpflichtversicherung",
+            "amount": 350.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Büromaterial & Porto",
+            "amount": 50.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Werbung (Rein Online/Social Media)",
+            "amount": 50.0,
+            "cost_type": "fixed"
+          }
         ],
         "revenue_items": []
       },
@@ -534,13 +1090,42 @@
         "id": "admin_standard",
         "name": "Standard Dorf-Marketing (Print & Online)",
         "cost_items": [
-          { "name": "Genehmigungen & Gebühren", "amount": 220.0, "cost_type": "fixed" },
-          { "name": "Versicherungen (inkl. Unfall Helfer)", "amount": 450.0, "cost_type": "fixed" },
-          { "name": "Werbung Print (Plakate/Banner/Flyer)", "amount": 650.0, "cost_type": "fixed" },
-          { "name": "Werbung Online (Social Media Boosts)", "amount": 150.0, "cost_type": "fixed" },
-          { "name": "Helfer-Verpflegung (Aufbau/Abbau/Orga)", "amount": 400.0, "cost_type": "fixed", "description": "Nur für Aufbauteam & Vorstand" },
-          { "name": "Repräsentation (Blumen/Orden)", "amount": 250.0, "cost_type": "fixed" },
-          { "name": "Sonstiges (Erste Hilfe/Kleinteile)", "amount": 100.0, "cost_type": "fixed" }
+          {
+            "name": "Genehmigungen & Gebühren",
+            "amount": 220.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Versicherungen (inkl. Unfall Helfer)",
+            "amount": 450.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Werbung Print (Plakate/Banner/Flyer)",
+            "amount": 650.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Werbung Online (Social Media Boosts)",
+            "amount": 150.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Helfer-Verpflegung (Aufbau/Abbau/Orga)",
+            "amount": 400.0,
+            "cost_type": "fixed",
+            "description": "Nur für Aufbauteam & Vorstand"
+          },
+          {
+            "name": "Repräsentation (Blumen/Orden)",
+            "amount": 250.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Sonstiges (Erste Hilfe/Kleinteile)",
+            "amount": 100.0,
+            "cost_type": "fixed"
+          }
         ],
         "revenue_items": []
       },
@@ -548,14 +1133,46 @@
         "id": "admin_growth",
         "name": "Offensive Vermarktung (Wachstum)",
         "cost_items": [
-          { "name": "Genehmigungen & Auflagen", "amount": 300.0, "cost_type": "fixed" },
-          { "name": "Versicherungen (Erweiterte Deckung)", "amount": 550.0, "cost_type": "fixed" },
-          { "name": "Grafik & Design (Extern)", "amount": 250.0, "cost_type": "fixed" },
-          { "name": "Werbung Großfläche (Banner Nachbarorte)", "amount": 500.0, "cost_type": "fixed" },
-          { "name": "Werbung Print (Flyer-Verteilung)", "amount": 400.0, "cost_type": "fixed" },
-          { "name": "Social Media Ads (Targeted)", "amount": 300.0, "cost_type": "fixed" },
-          { "name": "Helfer-Verpflegung (Aufbau/Abbau/Orga)", "amount": 600.0, "cost_type": "fixed" },
-          { "name": "Repräsentation & Ehrengäste", "amount": 400.0, "cost_type": "fixed" }
+          {
+            "name": "Genehmigungen & Auflagen",
+            "amount": 300.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Versicherungen (Erweiterte Deckung)",
+            "amount": 550.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Grafik & Design (Extern)",
+            "amount": 250.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Werbung Großfläche (Banner Nachbarorte)",
+            "amount": 500.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Werbung Print (Flyer-Verteilung)",
+            "amount": 400.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Social Media Ads (Targeted)",
+            "amount": 300.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Helfer-Verpflegung (Aufbau/Abbau/Orga)",
+            "amount": 600.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Repräsentation & Ehrengäste",
+            "amount": 400.0,
+            "cost_type": "fixed"
+          }
         ],
         "revenue_items": []
       }
