@@ -10,7 +10,7 @@
         "cost_items": [
           { "name": "Gage Musikverein", "amount": 600.0, "cost_type": "fixed" },
           { "name": "Verpflegung Musiker", "amount": 180.0, "cost_type": "fixed" },
-          { "name": "GEMA Gebühr", "amount": 85.0, "cost_type": "fixed" }
+          { "name": "GEMA Gebühr", "amount": 180.0, "cost_type": "fixed" }
         ]
       },
       {
@@ -20,7 +20,7 @@
           { "name": "Gage Band", "amount": 1800.0, "cost_type": "fixed" },
           { "name": "Technik & PA-Anlage", "amount": 400.0, "cost_type": "fixed" },
           { "name": "Catering Band", "amount": 120.0, "cost_type": "fixed" },
-          { "name": "GEMA Gebühr", "amount": 120.0, "cost_type": "fixed" },
+          { "name": "GEMA Gebühr", "amount": 350.0, "cost_type": "fixed" },
           { "name": "Anreise", "amount": 200.0, "cost_type": "fixed" }
         ]
       },
@@ -31,7 +31,7 @@
           { "name": "Gage Band", "amount": 3500.0, "cost_type": "fixed" },
           { "name": "Technik, Licht & Tontechnik", "amount": 800.0, "cost_type": "fixed" },
           { "name": "Catering & Backstage", "amount": 250.0, "cost_type": "fixed" },
-          { "name": "GEMA Gebühr", "amount": 150.0, "cost_type": "fixed" },
+          { "name": "GEMA Gebühr", "amount": 550.0, "cost_type": "fixed" },
           { "name": "Anreise", "amount": 400.0, "cost_type": "fixed" }
         ]
       },
@@ -41,7 +41,7 @@
         "cost_items": [
           { "name": "DJ Gage (4-6 Std.)", "amount": 600.0, "cost_type": "fixed" },
           { "name": "Technik & Lichtanlage", "amount": 350.0, "cost_type": "fixed" },
-          { "name": "GEMA Gebühr", "amount": 90.0, "cost_type": "fixed" }
+          { "name": "GEMA Gebühr", "amount": 250.0, "cost_type": "fixed" }
         ]
       },
       {
@@ -50,7 +50,7 @@
         "cost_items": [
           { "name": "DJ Gage", "amount": 1500.0, "cost_type": "fixed" },
           { "name": "Technik Premium (Licht, Effekte)", "amount": 600.0, "cost_type": "fixed" },
-          { "name": "GEMA Gebühr", "amount": 110.0, "cost_type": "fixed" },
+          { "name": "GEMA Gebühr", "amount": 350.0, "cost_type": "fixed" },
           { "name": "Anreise & Hotel", "amount": 250.0, "cost_type": "fixed" }
         ]
       },
@@ -61,7 +61,7 @@
           { "name": "Gage Alleinunterhalter", "amount": 1200.0, "cost_type": "fixed" },
           { "name": "Technik (eigene Anlage)", "amount": 0.0, "cost_type": "fixed" },
           { "name": "Verpflegung", "amount": 40.0, "cost_type": "fixed" },
-          { "name": "GEMA Gebühr", "amount": 80.0, "cost_type": "fixed" }
+          { "name": "GEMA Gebühr", "amount": 150.0, "cost_type": "fixed" }
         ]
       },
       {
@@ -69,7 +69,7 @@
         "name": "Musikanlage / Streaming (selbst betreut)",
         "cost_items": [
           { "name": "Musikanlage REZ", "amount": 50.0, "cost_type": "fixed" },
-          { "name": "GEMA Gebühr (Hintergrundmusik)", "amount": 45.0, "cost_type": "fixed" }
+          { "name": "GEMA Gebühr (Hintergrundmusik)", "amount": 100.0, "cost_type": "fixed" }
         ]
       },
       {
@@ -117,7 +117,7 @@
         "id": "security_basic",
         "name": "Basis-Sicherheit (2 Personen, 6 Std.)",
         "cost_items": [
-          { "name": "2 Securitykräfte á 6 Std. (25 €/Std.)", "amount": 300.0, "cost_type": "fixed" },
+          { "name": "2 Securitykräfte á 6 Std. (35 €/Std.)", "amount": 420.0, "cost_type": "fixed" },
           { "name": "Koordination & Briefing", "amount": 50.0, "cost_type": "fixed" }
         ]
       },
@@ -125,8 +125,8 @@
         "id": "security_standard",
         "name": "Standard-Sicherheit (3 Personen, 6 Std.)",
         "cost_items": [
-          { "name": "3 Securitykräfte á 6 Std. (25 €/Std.)", "amount": 450.0, "cost_type": "fixed" },
-          { "name": "Koordination & Briefing", "amount": 50.0, "cost_type": "fixed" },
+          { "name": "3 Securitykräfte á 6 Std. (35 €/Std.)", "amount": 630.0, "cost_type": "fixed" },
+          { "name": "Koordination & Briefing", "amount": 80.0, "cost_type": "fixed" },
           { "name": "Funkgeräte (3 Stück)", "amount": 45.0, "cost_type": "fixed" }
         ]
       },
@@ -134,15 +134,14 @@
         "id": "security_extended",
         "name": "Erweiterte Sicherheit (4 Personen, 6 Std.)",
         "cost_items": [
-          { "name": "4 Securitykräfte á 6 Std. (25 €/Std.)", "amount": 600.0, "cost_type": "fixed" },
-          { "name": "Koordination & Briefing", "amount": 80.0, "cost_type": "fixed" },
-          { "name": "Funkgeräte & Ausrüstung", "amount": 60.0, "cost_type": "fixed" },
-          { "name": "Sanitätsdienst (Bereitschaft)", "amount": 150.0, "cost_type": "fixed" }
+          { "name": "4 Securitykräfte á 6 Std. (35 €/Std.)", "amount": 840.0, "cost_type": "fixed" },
+          { "name": "Koordination & Briefing", "amount": 100.0, "cost_type": "fixed" },
+          { "name": "Funkgeräte & Ausrüstung", "amount": 60.0, "cost_type": "fixed" }
         ]
       },
       {
         "id": "security_none",
-        "name": "Keine Security (z.B. Frühschoppen)",
+        "name": "Keine Security (z.B. Frühschoppen, Krönungsball)",
         "cost_items": []
       },
       {
@@ -469,6 +468,53 @@
     ]
   },
   {
+    "id": "personnel",
+    "name": "Personal & Service (Theke/Kasse/Reinigung)",
+    "scope": "daily",
+    "variants": [
+      {
+        "id": "volunteers_friday",
+        "name": "Ehrenamtlich (Vereinsmitglieder)",
+        "cost_items": [
+          { "name": "Verpflegung Thekenteam (Bier/Essen)", "amount": 50.0, "cost_type": "fixed", "description": "Freier Verzehr während Schicht" },
+          { "name": "Schwund/Fehlbeträge (Kalkulatorisch)", "amount": 50.0, "cost_type": "fixed", "description": "Erfahrungswert bei Laien" }
+        ]
+      },
+      {
+        "id": "pro_small",
+        "name": "Profi-Team Klein (1 Zapfer + 3 Kellner)",
+        "cost_items": [
+          { "name": "Zapfmeister (8 Std. á 30€)", "amount": 240.0, "cost_type": "fixed" },
+          { "name": "1 Kellner (8 Std. á 20€)", "amount": 160.0, "cost_type": "fixed" },
+          { "name": "2 Kellner (6 Std. á 20€)", "amount": 240.0, "cost_type": "fixed", "description": "Früherer Feierabend (-2 Std)" }
+        ]
+      },
+      {
+        "id": "pro_medium",
+        "name": "Profi-Team Mittel (1 Zapfer + 4 Kellner)",
+        "cost_items": [
+          { "name": "Zapfmeister (8 Std. á 30€)", "amount": 240.0, "cost_type": "fixed" },
+          { "name": "2 Kellner (8 Std. á 20€)", "amount": 320.0, "cost_type": "fixed" },
+          { "name": "2 Kellner (6 Std. á 20€)", "amount": 240.0, "cost_type": "fixed", "description": "Früherer Feierabend (-2 Std)" }
+        ]
+      },
+      {
+        "id": "pro_large",
+        "name": "Profi-Team Groß (1 Zapfer + 6 Kellner)",
+        "cost_items": [
+          { "name": "Zapfmeister (8 Std. á 30€)", "amount": 240.0, "cost_type": "fixed" },
+          { "name": "4 Kellner (8 Std. á 20€)", "amount": 640.0, "cost_type": "fixed" },
+          { "name": "2 Kellner (6 Std. á 20€)", "amount": 240.0, "cost_type": "fixed", "description": "Früherer Feierabend (-2 Std)" }
+        ]
+      },
+      {
+        "id": "no_personnel",
+        "name": "Kein Personal / Ruhetag",
+        "cost_items": []
+      }
+    ]
+  },
+  {
     "id": "admin",
     "name": "Verwaltung & Marketing",
     "scope": "global",
@@ -492,7 +538,7 @@
           { "name": "Versicherungen (inkl. Unfall Helfer)", "amount": 450.0, "cost_type": "fixed" },
           { "name": "Werbung Print (Plakate/Banner/Flyer)", "amount": 650.0, "cost_type": "fixed" },
           { "name": "Werbung Online (Social Media Boosts)", "amount": 150.0, "cost_type": "fixed" },
-          { "name": "Helfer-Verpflegung (Aufbau/Abbau)", "amount": 400.0, "cost_type": "fixed" },
+          { "name": "Helfer-Verpflegung (Aufbau/Abbau/Orga)", "amount": 400.0, "cost_type": "fixed", "description": "Nur für Aufbauteam & Vorstand" },
           { "name": "Repräsentation (Blumen/Orden)", "amount": 250.0, "cost_type": "fixed" },
           { "name": "Sonstiges (Erste Hilfe/Kleinteile)", "amount": 100.0, "cost_type": "fixed" }
         ],
@@ -508,7 +554,7 @@
           { "name": "Werbung Großfläche (Banner Nachbarorte)", "amount": 500.0, "cost_type": "fixed" },
           { "name": "Werbung Print (Flyer-Verteilung)", "amount": 400.0, "cost_type": "fixed" },
           { "name": "Social Media Ads (Targeted)", "amount": 300.0, "cost_type": "fixed" },
-          { "name": "Helfer-Verpflegung & Dankeschön", "amount": 600.0, "cost_type": "fixed" },
+          { "name": "Helfer-Verpflegung (Aufbau/Abbau/Orga)", "amount": 600.0, "cost_type": "fixed" },
           { "name": "Repräsentation & Ehrengäste", "amount": 400.0, "cost_type": "fixed" }
         ],
         "revenue_items": []
