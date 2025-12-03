@@ -847,7 +847,7 @@
       },
       {
         "id": "kids_fun_bdsj",
-        "name": "Kinderbelustigung (BdSJ-Anhänger)",
+        "name": "Kinderbelustigung (BdSJ-Anhänger))",
         "cost_items": [
           {
             "name": "Sprit & Fahrtkosten",
@@ -1005,12 +1005,14 @@
           {
             "name": "Zapfmeister (8 Std. á 30€)",
             "amount": 240.0,
-            "cost_type": "fixed"
+            "cost_type": "fixed",
+            "description": NaN
           },
           {
             "name": "1 Kellner (8 Std. á 20€)",
             "amount": 160.0,
-            "cost_type": "fixed"
+            "cost_type": "fixed",
+            "description": NaN
           },
           {
             "name": "2 Kellner (6 Std. á 20€)",
@@ -1110,22 +1112,26 @@
           {
             "name": "Genehmigungen & Gebühren",
             "amount": 220.0,
-            "cost_type": "fixed"
+            "cost_type": "fixed",
+            "description": NaN
           },
           {
             "name": "Versicherungen (inkl. Unfall Helfer)",
             "amount": 450.0,
-            "cost_type": "fixed"
+            "cost_type": "fixed",
+            "description": NaN
           },
           {
             "name": "Werbung Print (Plakate/Banner/Flyer)",
-            "amount": 650.0,
-            "cost_type": "fixed"
+            "amount": 75.0,
+            "cost_type": "fixed",
+            "description": NaN
           },
           {
             "name": "Werbung Online (Social Media Boosts)",
-            "amount": 150.0,
-            "cost_type": "fixed"
+            "amount": 20.0,
+            "cost_type": "fixed",
+            "description": NaN
           },
           {
             "name": "Helfer-Verpflegung (Aufbau/Abbau/Orga)",
@@ -1136,12 +1142,14 @@
           {
             "name": "Repräsentation (Blumen/Orden)",
             "amount": 250.0,
-            "cost_type": "fixed"
+            "cost_type": "fixed",
+            "description": NaN
           },
           {
             "name": "Sonstiges (Erste Hilfe/Kleinteile)",
             "amount": 100.0,
-            "cost_type": "fixed"
+            "cost_type": "fixed",
+            "description": NaN
           }
         ],
         "revenue_items": []
