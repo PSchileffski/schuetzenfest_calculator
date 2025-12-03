@@ -55,7 +55,7 @@
         "zuschauer": 60,
         "teenie": 0
       },
-      "duration_hours": 6,
+      "duration_hours": 8,
       "selected_modules": {
         "music": "music_streaming",
         "security": "security_none",
@@ -73,7 +73,7 @@
         "zuschauer": 20,
         "teenie": 0
       },
-      "duration_hours": 5,
+      "duration_hours": 7,
       "selected_modules": {
         "music": "alleinunterhalter",
         "security": "security_none",
