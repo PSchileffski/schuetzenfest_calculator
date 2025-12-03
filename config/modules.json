@@ -846,6 +846,23 @@
         "revenue_items": []
       },
       {
+        "id": "kids_fun",
+        "name": "Kinderbelustigung (BdSJ-Anhänger))",
+        "cost_items": [
+          {
+            "name": "Sprit & Fahrtkosten",
+            "amount": 50.0,
+            "cost_type": "fixed"
+          },
+          {
+            "name": "Preise & Süßwaren",
+            "amount": 100.0,
+            "cost_type": "fixed"
+          }
+        ],
+        "revenue_items": []
+      },
+      {
         "id": "happy_hour_free_beer",
         "name": "Happy Hour (50l Freibier)",
         "cost_items": [
