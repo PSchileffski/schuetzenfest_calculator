@@ -1,0 +1,242 @@
+import json
+from typing import List, Dict, Any
+from .models import Scenario, Module, CostType, RevenueType, Product, Persona
+
+class Calculator:
+    def __init__(self, modules_file: str, master_data_file: str):
+        self.modules = self._load_modules(modules_file)
+        self.modules_map = {m.id: m for m in self.modules}
+        
+        self.products, self.personas = self._load_master_data(master_data_file)
+        self.products_map = {p.id: p for p in self.products}
+        self.personas_map = {p.id: p for p in self.personas}
+
+    def _load_modules(self, filepath: str) -> List[Module]:
+        with open(filepath, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        return [Module(**m) for m in data]
+
+    def _load_master_data(self, filepath: str):
+        with open(filepath, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        products = [Product(**p) for p in data.get('products', [])]
+        personas = [Persona(**p) for p in data.get('personas', [])]
+        return products, personas
+
+    def calculate_scenario(self, scenario: Scenario) -> Dict[str, Any]:
+        total_cost = 0.0
+        breakdown = []
+
+        # Calculate total visitors and hours for defaults
+        total_visitors = sum(d.total_visitors for d in scenario.days)
+        total_hours = sum(d.duration_hours for d in scenario.days)
+
+        # --- Helper to calculate a module variant cost ---
+        def calculate_variant_cost(module, variant, context_visitors, context_hours, context_name):
+            mod_cost = 0.0
+            mod_items = []
+            for item in variant.cost_items:
+                item_cost = 0.0
+                if item.cost_type == CostType.FIXED:
+                    item_cost = item.amount
+                elif item.cost_type == CostType.PER_VISITOR:
+                    item_cost = item.amount * context_visitors
+                elif item.cost_type == CostType.PER_HOUR:
+                    multiplier = context_hours
+                    if item.multiplier_key and item.multiplier_key in scenario.global_parameters:
+                        multiplier = scenario.global_parameters[item.multiplier_key]
+                    item_cost = item.amount * multiplier
+                
+                mod_cost += item_cost
+                mod_items.append({
+                    "name": item.name,
+                    "type": item.cost_type,
+                    "unit_amount": item.amount,
+                    "total": item_cost,
+                    "description": item.description
+                })
+            return mod_cost, mod_items
+
+        # 1. Calculate Global Modules
+        # Only use global_modules (new structure)
+        for module_id, variant_id in scenario.global_modules.items():
+            module = self.modules_map.get(module_id)
+            if not module: continue
+            
+            # Skip if module is not global scope
+            if module.scope == "daily":
+                continue
+                
+            variant = next((v for v in module.variants if v.id == variant_id), None)
+            if not variant: continue
+
+            cost, items = calculate_variant_cost(module, variant, total_visitors, total_hours, "Global")
+            total_cost += cost
+            breakdown.append({
+                "module": module.name,
+                "variant": variant.name,
+                "cost": cost,
+                "items": items,
+                "scope": "Global"
+            })
+
+        # 2. Calculate Day Specific Modules
+        for day in scenario.days:
+            for module_id, variant_id in day.selected_modules.items():
+                module = self.modules_map.get(module_id)
+                if not module: continue
+                
+                # Skip if module is not daily scope
+                if module.scope == "global":
+                    continue
+                    
+                variant = next((v for v in module.variants if v.id == variant_id), None)
+                if not variant: continue
+
+                cost, items = calculate_variant_cost(module, variant, day.total_visitors, day.duration_hours, day.name)
+                total_cost += cost
+                breakdown.append({
+                    "module": f"{module.name} ({day.name})",
+                    "variant": variant.name,
+                    "cost": cost,
+                    "items": items,
+                    "scope": day.name
+                })
+
+        # 3. Calculate Revenue & Consumption Costs
+        total_revenue = 0.0
+        revenue_breakdown = []
+        
+        # 2a. Global Revenue Items
+        for item in scenario.revenue_items:
+            item_revenue = 0.0
+            if item.revenue_type == RevenueType.FIXED:
+                item_revenue = item.amount
+            elif item.revenue_type == RevenueType.PER_VISITOR:
+                item_revenue = item.amount * total_visitors
+            
+            total_revenue += item_revenue
+            revenue_breakdown.append({
+                "name": item.name,
+                "type": item.revenue_type,
+                "total": item_revenue,
+                "category": "Global"
+            })
+
+        # 2b. Day Specific Revenue & Consumption
+        for day in scenario.days:
+            # Entry ticket revenue based on entry module selection
+            day_visitors = day.total_visitors
+            entry_variant_id = day.selected_modules.get("entry")
+            if entry_variant_id:
+                entry_module = self.modules_map.get("entry")
+                if entry_module:
+                    entry_variant = next((v for v in entry_module.variants if v.id == entry_variant_id), None)
+                    if entry_variant:
+                        entry_revenue = 0.0
+                        entry_name = ""
+                        
+                        if entry_variant_id == "ten_euro_entry":
+                            entry_revenue = 10.0 * day_visitors
+                            entry_name = f"Eintritt 10 € ({day.name})"
+                        elif entry_variant_id == "fifteen_euro_voucher":
+                            entry_revenue = 15.0 * day_visitors
+                            entry_name = f"Eintritt 15 € ({day.name})"
+                        
+                        if entry_revenue > 0:
+                            total_revenue += entry_revenue
+                            revenue_breakdown.append({
+                                "name": entry_name,
+                                "type": "per_visitor",
+                                "total": entry_revenue,
+                                "category": "Tickets/Entry"
+                            })
+            
+            # Day specific fixed/per_visitor revenue (e.g. Sponsoring for specific days)
+            for item in day.day_specific_revenue:
+                r = 0.0
+                if item.revenue_type == RevenueType.PER_VISITOR:
+                    r = item.amount * day_visitors
+                elif item.revenue_type == RevenueType.FIXED:
+                    r = item.amount
+                
+                total_revenue += r
+                revenue_breakdown.append({
+                    "name": f"{item.name} ({day.name})",
+                    "type": item.revenue_type,
+                    "total": r,
+                    "category": "Tickets/Entry"
+                })
+
+            # Consumption Calculation per day
+            day_consumption_revenue = 0.0
+            day_consumption_cost = 0.0
+            
+            # Check if there's a voucher system (15€ entry with 5€ voucher)
+            voucher_reduction = 0.0
+            entry_variant_id = day.selected_modules.get("entry")
+            if entry_variant_id == "fifteen_euro_voucher":
+                voucher_reduction = 5.0 * day_visitors
+            
+            for persona_id, count in day.visitor_composition.items():
+                persona = self.personas_map.get(persona_id)
+                if not persona: continue
+                
+                for prod_id, amount in persona.consumption.items():
+                    product = self.products_map.get(prod_id)
+                    if not product: continue
+                    
+                    total_units = amount * count
+                    rev = total_units * product.sales_price
+                    cost = total_units * product.purchase_price
+                    
+                    day_consumption_revenue += rev
+                    day_consumption_cost += cost
+
+            # Add day consumption to totals and breakdown
+            # Apply voucher reduction to revenue
+            net_consumption_revenue = day_consumption_revenue - voucher_reduction
+            
+            total_revenue += net_consumption_revenue
+            total_cost += day_consumption_cost
+            
+            if day_consumption_revenue > 0:
+                revenue_breakdown.append({
+                    "name": f"Getränkeverkauf ({day.name})",
+                    "type": "consumption",
+                    "total": day_consumption_revenue,
+                    "category": f"Consumption-{day.name}"
+                })
+            
+            # Add voucher as negative revenue if applicable
+            if voucher_reduction > 0:
+                total_revenue -= voucher_reduction  # already subtracted above, this is just for display
+                revenue_breakdown.append({
+                    "name": f"Verzehrgutscheine ({day.name})",
+                    "type": "voucher",
+                    "total": -voucher_reduction,
+                    "category": f"Consumption-{day.name}"
+                })
+            
+            if day_consumption_cost > 0:
+                breakdown.append({
+                    "module": f"Wareneinsatz Getränke ({day.name})",
+                    "variant": "Verbrauchsabhängig",
+                    "cost": day_consumption_cost,
+                    "items": [{"name": "Einkauf Getränke", "total": day_consumption_cost, "type": "variable"}],
+                    "scope": day.name
+                })
+
+        profit = total_revenue - total_cost
+
+        return {
+            "scenario_name": scenario.name,
+            "total_cost": total_cost,
+            "total_revenue": total_revenue,
+            "profit": profit,
+            "total_visitors": total_visitors,
+            "cost_per_visitor": total_cost / total_visitors if total_visitors > 0 else 0,
+            "revenue_per_visitor": total_revenue / total_visitors if total_visitors > 0 else 0,
+            "breakdown": breakdown,
+            "revenue_breakdown": revenue_breakdown
+        }

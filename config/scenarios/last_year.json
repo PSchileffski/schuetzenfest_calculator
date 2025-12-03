@@ -1,0 +1,71 @@
+{
+  "id": "scenario_last_year",
+  "name": "2025",
+  "description": "Kleine Dorfkirmes mit DJ, Band und Alleinunterhalter",
+  "days": [
+    { 
+      "name": "Freitag (Jugendparty)", 
+      "duration_hours": 6,
+      "visitor_composition": {
+        "schuetzenbruder": 20,
+        "besucher": 30,
+        "teenie": 100
+      },
+      "selected_modules": {
+        "music": "dj_booking",
+        "security": "high_security"
+      }
+    },
+    { 
+      "name": "Samstag (Ball)", 
+      "duration_hours": 8,
+      "visitor_composition": {
+        "schuetzenbruder": 40,
+        "besucher": 120
+      },
+      "selected_modules": {
+        "music": "live_band_top",
+        "security": "medium_security"
+      },
+      "day_specific_revenue": [
+        { "name": "Eintritt Samstag (inkl. Gutschein)", "amount": 10.0, "revenue_type": "per_visitor", "description": "15€ Ticket - 5€ Gutschein (Gutschein wird über Verzehr verrechnet)" }
+      ]
+    },
+    { 
+      "name": "Sonntag (Frühschoppen)", 
+      "duration_hours": 6,
+      "visitor_composition": {
+        "schuetzenbruder": 20,
+        "besucher": 40,
+        "zuschauer": 60
+      },
+      "selected_modules": {
+        "music": "local_band",
+        "security": "volunteer_security"
+      }
+    },
+    { 
+      "name": "Montag (Krönung)", 
+      "duration_hours": 5,
+      "visitor_composition": {
+        "schuetzenbruder": 30,
+        "besucher": 120,
+        "zuschauer": 20
+      },
+      "selected_modules": {
+        "music": "solo_entertainer",
+        "security": "volunteer_security"
+      }
+    }
+  ],
+  "global_modules": {
+    "location": "kirmes_tent",
+    "infrastructure": "tent_infra",
+    "equipment": "rental_equipment",
+    "admin": "standard_admin"
+  },
+  "global_parameters": {},
+  "revenue_items": [
+    { "name": "Sponsoring Lokal", "amount": 1500.0, "revenue_type": "fixed" }
+  ]
+}

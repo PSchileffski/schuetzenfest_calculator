@@ -1,0 +1,51 @@
+{
+  "products": [
+    { "id": "beer", "name": "Bier (0.3l)", "sales_price": 2.50, "purchase_price": 1.10 },
+    { "id": "softdrink", "name": "Softdrink (0.3l)", "sales_price": 2.00, "purchase_price": 0.80 },
+    { "id": "water", "name": "Wasser (0.3l)", "sales_price": 1.50, "purchase_price": 0.40 },
+    { "id": "longdrink", "name": "Longdrink", "sales_price": 4.50, "purchase_price": 1.50 },
+    { "id": "shot", "name": "Schnaps", "sales_price": 2.00, "purchase_price": 0.60 }
+  ],
+  "personas": [
+    {
+      "id": "schuetzenbruder",
+      "name": "Schützenbruder",
+      "description": "Trinkfest, meist Bier",
+      "consumption": {
+        "beer": 12.0,
+        "shot": 3.0,
+        "water": 1.0
+      }
+    },
+    {
+      "id": "besucher",
+      "name": "Besucher (Normal)",
+      "description": "Gemischtes Publikum",
+      "consumption": {
+        "beer": 4.0,
+        "softdrink": 2.0,
+        "water": 1.0
+      }
+    },
+    {
+      "id": "zuschauer",
+      "name": "Zuschauer / Kurzbesucher",
+      "description": "Kommt nur kurz gucken",
+      "consumption": {
+        "softdrink": 1.0,
+        "water": 0.5,
+        "beer": 0.5
+      }
+    },
+    {
+      "id": "teenie",
+      "name": "Teenie / Jugend",
+      "description": "Vorgeglüht, trinkt günstig",
+      "consumption": {
+        "beer": 3.0,
+        "softdrink": 1.0,
+        "shot": 1.0
+      }
+    }
+  ]
+}

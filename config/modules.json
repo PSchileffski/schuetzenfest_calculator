@@ -1,0 +1,326 @@
+[
+  {
+    "id": "music",
+    "name": "Musik & Unterhaltung",
+    "scope": "daily",
+    "variants": [
+      {
+        "id": "dj_booking",
+        "name": "DJ Booking",
+        "cost_items": [
+          { "name": "DJ Gage", "amount": 500.0, "cost_type": "fixed" },
+          { "name": "GEMA Anteil", "amount": 80.0, "cost_type": "fixed" }
+        ]
+      },
+      {
+        "id": "live_band_top",
+        "name": "Top Live-Band",
+        "cost_items": [
+          { "name": "Gage", "amount": 2500.0, "cost_type": "fixed" },
+          { "name": "Catering Band", "amount": 150.0, "cost_type": "fixed" },
+          { "name": "GEMA Anteil", "amount": 120.0, "cost_type": "fixed" }
+        ]
+      },
+      {
+        "id": "local_band",
+        "name": "Lokale Kapelle",
+        "cost_items": [
+          { "name": "Gage", "amount": 800.0, "cost_type": "fixed" },
+          { "name": "GEMA Anteil", "amount": 60.0, "cost_type": "fixed" }
+        ]
+      },
+      {
+        "id": "solo_entertainer",
+        "name": "Alleinunterhalter",
+        "cost_items": [
+          { "name": "Gage", "amount": 1200.0, "cost_type": "fixed" },
+          { "name": "GEMA Anteil", "amount": 70.0, "cost_type": "fixed" }
+        ]
+      },
+      {
+        "id": "club_dj",
+        "name": "Club DJ Premium",
+        "cost_items": [
+          { "name": "Gage", "amount": 1500.0, "cost_type": "fixed" },
+          { "name": "GEMA Anteil", "amount": 100.0, "cost_type": "fixed" }
+        ]
+      },
+      {
+        "id": "none",
+        "name": "Keine Musik",
+        "cost_items": []
+      }
+    ]
+  },
+  {
+    "id": "entry",
+    "name": "Eintritt",
+    "scope": "daily",
+    "variants": [
+      {
+        "id": "no_entry",
+        "name": "Kein Eintritt",
+        "cost_items": []
+      },
+      {
+        "id": "ten_euro_entry",
+        "name": "10 € Eintritt",
+        "cost_items": []
+      },
+      {
+        "id": "fifteen_euro_voucher",
+        "name": "15 € Eintritt (5 € Verzehrgutschein)",
+        "cost_items": [
+          { "name": "Gutscheinkosten (Druck)", "amount": 0.50, "cost_type": "per_visitor" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "security",
+    "name": "Sicherheit",
+    "scope": "daily",
+    "variants": [
+      {
+        "id": "high_security",
+        "name": "Hohe Sicherheit (Jugendparty)",
+        "cost_items": [
+          { "name": "Security Personal", "amount": 600.0, "cost_type": "fixed" }
+        ]
+      },
+      {
+        "id": "medium_security",
+        "name": "Mittlere Sicherheit",
+        "cost_items": [
+          { "name": "Security Personal", "amount": 400.0, "cost_type": "fixed" }
+        ]
+      },
+      {
+        "id": "volunteer_security",
+        "name": "Vereinsmitglieder",
+        "cost_items": [
+          { "name": "Verpflegung Helfer", "amount": 50.0, "cost_type": "fixed" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "location",
+    "name": "Zelt & Location",
+    "scope": "global",
+    "variants": [
+      {
+        "id": "kirmes_tent",
+        "name": "Großes Kirmeszelt (Miete)",
+        "cost_items": [
+          { "name": "Miete Zelt", "amount": 6000.0, "cost_type": "fixed" },
+          { "name": "Zeltboden", "amount": 0.0, "cost_type": "fixed", "description": "In Miete enthalten" }
+        ]
+      },
+      {
+        "id": "large_tent",
+        "name": "Großes Festzelt (Premium)",
+        "cost_items": [
+          { "name": "Miete Zelt", "amount": 8000.0, "cost_type": "fixed" },
+          { "name": "Zeltboden", "amount": 2000.0, "cost_type": "fixed" },
+          { "name": "Stromanschluss", "amount": 500.0, "cost_type": "fixed" }
+        ]
+      },
+      {
+        "id": "existing_hall",
+        "name": "Nutzung Schützenhalle",
+        "cost_items": [
+          { "name": "Nutzungsgebühr", "amount": 0.0, "cost_type": "fixed", "description": "Vereinseigen" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "infrastructure",
+    "name": "Infrastruktur & Nebenkosten",
+    "scope": "global",
+    "variants": [
+      {
+        "id": "tent_infra",
+        "name": "Zelt-Infrastruktur (Voll)",
+        "cost_items": [
+          { "name": "Toilettenwagen", "amount": 800.0, "cost_type": "fixed" },
+          { "name": "Müllentsorgung", "amount": 400.0, "cost_type": "fixed" },
+          { "name": "Strom & Wasser Anschluss", "amount": 600.0, "cost_type": "fixed" },
+          { "name": "Zeltheizung (Diesel/Miete)", "amount": 1200.0, "cost_type": "fixed", "description": "Wetterabhängig" },
+          { "name": "Reinigung (Endreinigung)", "amount": 400.0, "cost_type": "fixed" }
+        ]
+      },
+      {
+        "id": "hall_infra",
+        "name": "Hallen-Nebenkosten",
+        "cost_items": [
+          { "name": "Reinigung", "amount": 250.0, "cost_type": "fixed" },
+          { "name": "Strom & Wasser", "amount": 200.0, "cost_type": "fixed" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equipment",
+    "name": "Ausstattung (Theke/Kühl)",
+    "scope": "global",
+    "variants": [
+      {
+        "id": "rental_equipment",
+        "name": "Miet-Ausstattung",
+        "cost_items": [
+          { "name": "Theken & Zapfanlagen", "amount": 800.0, "cost_type": "fixed" },
+          { "name": "Kühlwagen", "amount": 400.0, "cost_type": "fixed" },
+          { "name": "Gläser (Miete/Bruch)", "amount": 250.0, "cost_type": "fixed" }
+        ]
+      },
+      {
+        "id": "owned_equipment",
+        "name": "Vereinseigentum",
+        "cost_items": [
+          { "name": "Wartung/Reparatur", "amount": 200.0, "cost_type": "fixed" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "decoration",
+    "name": "Dekoration & Festschmuck",
+    "scope": "global",
+    "variants": [
+      {
+        "id": "full_decoration",
+        "name": "Volle Festdekoration",
+        "cost_items": [
+          { "name": "Girlanden & Wimpel", "amount": 300.0, "cost_type": "fixed" },
+          { "name": "Tischdekoration", "amount": 250.0, "cost_type": "fixed" },
+          { "name": "Blumenschmuck", "amount": 400.0, "cost_type": "fixed" }
+        ]
+      },
+      {
+        "id": "minimal_decoration",
+        "name": "Basis-Dekoration",
+        "cost_items": [
+          { "name": "Girlanden & Wimpel", "amount": 150.0, "cost_type": "fixed" },
+          { "name": "Tischdekoration", "amount": 100.0, "cost_type": "fixed" }
+        ]
+      },
+      {
+        "id": "no_decoration",
+        "name": "Keine zusätzliche Dekoration",
+        "cost_items": []
+      }
+    ]
+  },
+  {
+    "id": "catering",
+    "name": "Verpflegung & Speisen",
+    "scope": "daily",
+    "variants": [
+      {
+        "id": "full_kitchen",
+        "name": "Volle Küche (Pommes, Würstchen, etc.)",
+        "cost_items": [
+          { "name": "Küchenpersonal", "amount": 400.0, "cost_type": "fixed" },
+          { "name": "Wareneinsatz Speisen", "amount": 2.50, "cost_type": "per_visitor" },
+          { "name": "Friteuse & Grill Miete", "amount": 200.0, "cost_type": "fixed" }
+        ]
+      },
+      {
+        "id": "snacks_only",
+        "name": "Nur Snacks (Chips, Nüsse)",
+        "cost_items": [
+          { "name": "Wareneinsatz Snacks", "amount": 0.80, "cost_type": "per_visitor" }
+        ]
+      },
+      {
+        "id": "no_food",
+        "name": "Keine Speisen",
+        "cost_items": []
+      }
+    ]
+  },
+  {
+    "id": "entertainment",
+    "name": "Zusatz-Unterhaltung",
+    "scope": "daily",
+    "variants": [
+      {
+        "id": "games_prizes",
+        "name": "Spiele & Preise",
+        "cost_items": [
+          { "name": "Schießstand Munition", "amount": 150.0, "cost_type": "fixed" },
+          { "name": "Preise & Pokale", "amount": 300.0, "cost_type": "fixed" }
+        ]
+      },
+      {
+        "id": "fireworks",
+        "name": "Feuerwerk",
+        "cost_items": [
+          { "name": "Feuerwerk", "amount": 800.0, "cost_type": "fixed" },
+          { "name": "Pyrotechnik-Genehmigung", "amount": 100.0, "cost_type": "fixed" }
+        ]
+      },
+      {
+        "id": "no_extras",
+        "name": "Keine Extras",
+        "cost_items": []
+      }
+    ]
+  },
+  {
+    "id": "transport",
+    "name": "Transport & Logistik",
+    "scope": "global",
+    "variants": [
+      {
+        "id": "full_transport",
+        "name": "Komplett-Logistik",
+        "cost_items": [
+          { "name": "LKW Anmietung", "amount": 400.0, "cost_type": "fixed" },
+          { "name": "Sprit & Maut", "amount": 150.0, "cost_type": "fixed" },
+          { "name": "Helfer Fahrtkosten", "amount": 200.0, "cost_type": "fixed" }
+        ]
+      },
+      {
+        "id": "minimal_transport",
+        "name": "Basis-Transport",
+        "cost_items": [
+          { "name": "Sprit & Fahrtkosten", "amount": 150.0, "cost_type": "fixed" }
+        ]
+      },
+      {
+        "id": "no_transport",
+        "name": "Kein zusätzlicher Transport",
+        "cost_items": []
+      }
+    ]
+  },
+  {
+    "id": "admin",
+    "name": "Verwaltung & Marketing",
+    "scope": "global",
+    "variants": [
+      {
+        "id": "standard_admin",
+        "name": "Standard Paket",
+        "cost_items": [
+          { "name": "Werbung (Plakate/Flyer)", "amount": 800.0, "cost_type": "fixed" },
+          { "name": "Versicherungen", "amount": 350.0, "cost_type": "fixed" },
+          { "name": "Genehmigungen", "amount": 200.0, "cost_type": "fixed" },
+          { "name": "Helferverpflegung", "amount": 600.0, "cost_type": "fixed" }
+        ]
+      },
+      {
+        "id": "low_admin",
+        "name": "Minimal",
+        "cost_items": [
+          { "name": "Werbung (Online)", "amount": 100.0, "cost_type": "fixed" },
+          { "name": "Versicherungen", "amount": 350.0, "cost_type": "fixed" },
+          { "name": "Genehmigungen", "amount": 200.0, "cost_type": "fixed" }
+        ]
+      }
+    ]
+  }
+]
