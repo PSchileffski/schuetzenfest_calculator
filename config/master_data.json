@@ -1,8 +1,8 @@
 {
   "products": [
-    { "id": "beer", "name": "Bier (0.2l)", "sales_price": 2.50, "purchase_price": 0.75 },
-    { "id": "softdrink", "name": "Softdrink (0.2l)", "sales_price": 2.00, "purchase_price": 0.50 },
-    { "id": "water", "name": "Wasser (0.2l)", "sales_price": 2.00, "purchase_price": 0.30 },
+    { "id": "beer", "name": "Bier (0.2l)", "sales_price": 2.50, "purchase_price": 0.56 },
+    { "id": "softdrink", "name": "Softdrink (0.2l)", "sales_price": 2.00, "purchase_price": 0.35 },
+    { "id": "water", "name": "Wasser (0.2l)", "sales_price": 1.50, "purchase_price": 0.20 },
     { "id": "longdrink", "name": "Longdrink (4cl)", "sales_price": 5.00, "purchase_price": 1.30 },
     { "id": "shot", "name": "Schnaps (2cl)", "sales_price": 2.50, "purchase_price": 0.40 }
   ],
