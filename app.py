@@ -80,13 +80,27 @@ if selected_scenario_name:
         # Find current variant index
         current_var_id = current_global.get(module.id)
         variant_options = {}
+        variant_details = {}  # Store details for help text
+        variant_id_to_name = {}  # Map variant IDs to display names
+        
         for v in module.variants:
             # Calculate total cost for this variant
             total_cost = sum(item.amount for item in v.cost_items if item.cost_type == 'fixed')
-            if total_cost > 0:
-                variant_options[f"{v.name} ({total_cost:.0f} €)"] = v.id
-            else:
-                variant_options[v.name] = v.id
+            
+            # Build detailed cost breakdown for help text
+            cost_details = []
+            for item in v.cost_items:
+                if item.cost_type == 'fixed':
+                    cost_details.append(f"• {item.name}: {item.amount:.0f} €")
+                elif item.cost_type == 'per_visitor':
+                    cost_details.append(f"• {item.name}: {item.amount:.2f} € pro Besucher")
+                elif item.cost_type == 'per_hour':
+                    cost_details.append(f"• {item.name}: {item.amount:.2f} € pro Stunde")
+            
+            display_name = f"{v.name} ({total_cost:.0f} €)" if total_cost > 0 else v.name
+            variant_options[display_name] = v.id
+            variant_id_to_name[v.id] = display_name
+            variant_details[v.id] = "\n".join(cost_details) if cost_details else "Keine Kosten"
         
         # Default to first if not found
         default_idx = 0
@@ -101,7 +115,14 @@ if selected_scenario_name:
             index=default_idx,
             key=f"global_{module.id}"
         )
-        global_modules_selection[module.id] = variant_options[selected_name]
+        
+        # Get selected variant ID and show its details
+        selected_variant_id = variant_options[selected_name]
+        help_text = variant_details.get(selected_variant_id, "")
+        if help_text and help_text != "Keine Kosten":
+            st.sidebar.caption(f"ℹ️ {help_text}")
+        
+        global_modules_selection[module.id] = selected_variant_id
 
     # Update scenario global modules
     scenario = scenario.model_copy(update={"global_modules": global_modules_selection})
@@ -125,13 +146,25 @@ if selected_scenario_name:
                 # Current variant for this day
                 current_var_id = day_modules_selection.get(module.id)
                 variant_options = {}
+                variant_details = {}  # Store details for help text
+                
                 for v in module.variants:
                     # Calculate total cost for this variant
                     total_cost = sum(item.amount for item in v.cost_items if item.cost_type == 'fixed')
-                    if total_cost > 0:
-                        variant_options[f"{v.name} ({total_cost:.0f} €)"] = v.id
-                    else:
-                        variant_options[v.name] = v.id
+                    
+                    # Build detailed cost breakdown for help text
+                    cost_details = []
+                    for item in v.cost_items:
+                        if item.cost_type == 'fixed':
+                            cost_details.append(f"• {item.name}: {item.amount:.0f} €")
+                        elif item.cost_type == 'per_visitor':
+                            cost_details.append(f"• {item.name}: {item.amount:.2f} € pro Besucher")
+                        elif item.cost_type == 'per_hour':
+                            cost_details.append(f"• {item.name}: {item.amount:.2f} € pro Stunde")
+                    
+                    display_name = f"{v.name} ({total_cost:.0f} €)" if total_cost > 0 else v.name
+                    variant_options[display_name] = v.id
+                    variant_details[v.id] = "\n".join(cost_details) if cost_details else "Keine Kosten"
                 
                 # Default logic: 
                 # If not set for day, pick "none"/"no_entry" if exists, else first
@@ -157,7 +190,14 @@ if selected_scenario_name:
                     index=default_idx,
                     key=f"{day.name}_{module.id}"
                 )
-                day_modules_selection[module.id] = variant_options[selected_name]
+                
+                # Get selected variant ID and show its details
+                selected_variant_id = variant_options[selected_name]
+                help_text = variant_details.get(selected_variant_id, "")
+                if help_text and help_text != "Keine Kosten":
+                    st.caption(f"ℹ️ {help_text}")
+                
+                day_modules_selection[module.id] = selected_variant_id
 
             # 2. Visitors
             st.markdown("**Besucher**")
