@@ -26,21 +26,42 @@ class Calculator:
     def calculate_scenario(self, scenario: Scenario) -> Dict[str, Any]:
         total_cost = 0.0
         breakdown = []
+        total_revenue = 0.0
+        revenue_breakdown = []
 
         # Calculate total visitors and hours for defaults
         total_visitors = sum(d.total_visitors for d in scenario.days)
         total_hours = sum(d.duration_hours for d in scenario.days)
+        
+        # Calculate total visitor composition for global modules
+        total_visitor_composition = {}
+        for day in scenario.days:
+            for pid, count in day.visitor_composition.items():
+                total_visitor_composition[pid] = total_visitor_composition.get(pid, 0) + count
 
         # --- Helper to calculate a module variant cost ---
-        def calculate_variant_cost(module, variant, context_visitors, context_hours, context_name):
+        def calculate_variant_cost(module, variant, context_visitors, context_hours, context_name, visitor_composition):
             mod_cost = 0.0
             mod_items = []
+            
+            # Calculate weighted visitors for this module
+            weighted_visitors = 0.0
+            if visitor_composition:
+                for pid, count in visitor_composition.items():
+                    persona = self.personas_map.get(pid)
+                    rate = 1.0
+                    if persona and module.id in persona.module_adoption_rates:
+                        rate = persona.module_adoption_rates[module.id]
+                    weighted_visitors += count * rate
+            else:
+                weighted_visitors = context_visitors
+
             for item in variant.cost_items:
                 item_cost = 0.0
                 if item.cost_type == CostType.FIXED:
                     item_cost = item.amount
                 elif item.cost_type == CostType.PER_VISITOR:
-                    item_cost = item.amount * context_visitors
+                    item_cost = item.amount * weighted_visitors
                 elif item.cost_type == CostType.PER_HOUR:
                     multiplier = context_hours
                     if item.multiplier_key and item.multiplier_key in scenario.global_parameters:
@@ -57,6 +78,39 @@ class Calculator:
                 })
             return mod_cost, mod_items
 
+        # --- Helper to calculate a module variant revenue ---
+        def calculate_variant_revenue(module, variant, context_visitors, context_hours, context_name, visitor_composition):
+            mod_rev = 0.0
+            mod_items = []
+            
+            # Calculate weighted visitors for this module
+            weighted_visitors = 0.0
+            if visitor_composition:
+                for pid, count in visitor_composition.items():
+                    persona = self.personas_map.get(pid)
+                    rate = 1.0
+                    if persona and module.id in persona.module_adoption_rates:
+                        rate = persona.module_adoption_rates[module.id]
+                    weighted_visitors += count * rate
+            else:
+                weighted_visitors = context_visitors
+
+            for item in variant.revenue_items:
+                item_rev = 0.0
+                if item.revenue_type == RevenueType.FIXED:
+                    item_rev = item.amount
+                elif item.revenue_type == RevenueType.PER_VISITOR:
+                    item_rev = item.amount * weighted_visitors
+                
+                mod_rev += item_rev
+                mod_items.append({
+                    "name": f"{item.name} ({context_name})",
+                    "type": item.revenue_type,
+                    "total": item_rev,
+                    "category": f"Module: {module.name}"
+                })
+            return mod_rev, mod_items
+
         # 1. Calculate Global Modules
         # Only use global_modules (new structure)
         for module_id, variant_id in scenario.global_modules.items():
@@ -70,7 +124,7 @@ class Calculator:
             variant = next((v for v in module.variants if v.id == variant_id), None)
             if not variant: continue
 
-            cost, items = calculate_variant_cost(module, variant, total_visitors, total_hours, "Global")
+            cost, items = calculate_variant_cost(module, variant, total_visitors, total_hours, "Global", total_visitor_composition)
             total_cost += cost
             breakdown.append({
                 "module": module.name,
@@ -79,6 +133,11 @@ class Calculator:
                 "items": items,
                 "scope": "Global"
             })
+
+            # Calculate Revenue from Module
+            rev, rev_items = calculate_variant_revenue(module, variant, total_visitors, total_hours, "Global", total_visitor_composition)
+            total_revenue += rev
+            revenue_breakdown.extend(rev_items)
 
         # 2. Calculate Day Specific Modules
         for day in scenario.days:
@@ -93,7 +152,7 @@ class Calculator:
                 variant = next((v for v in module.variants if v.id == variant_id), None)
                 if not variant: continue
 
-                cost, items = calculate_variant_cost(module, variant, day.total_visitors, day.duration_hours, day.name)
+                cost, items = calculate_variant_cost(module, variant, day.total_visitors, day.duration_hours, day.name, day.visitor_composition)
                 total_cost += cost
                 breakdown.append({
                     "module": f"{module.name} ({day.name})",
@@ -103,9 +162,13 @@ class Calculator:
                     "scope": day.name
                 })
 
+                # Calculate Revenue from Module
+                rev, rev_items = calculate_variant_revenue(module, variant, day.total_visitors, day.duration_hours, day.name, day.visitor_composition)
+                total_revenue += rev
+                revenue_breakdown.extend(rev_items)
+
         # 3. Calculate Revenue & Consumption Costs
-        total_revenue = 0.0
-        revenue_breakdown = []
+        # total_revenue and revenue_breakdown are already initialized
         
         # 2a. Global Revenue Items
         for item in scenario.revenue_items:

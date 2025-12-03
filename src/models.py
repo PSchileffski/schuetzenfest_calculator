@@ -33,6 +33,7 @@ class ModuleVariant(BaseModel):
     name: str
     description: Optional[str] = None
     cost_items: List[CostItem] = []
+    revenue_items: List[RevenueItem] = []
 
 class ModuleScope(str, Enum):
     GLOBAL = "global"
@@ -58,6 +59,8 @@ class Persona(BaseModel):
     description: Optional[str] = None
     # Map product_id to amount consumed per day
     consumption: Dict[str, float] = {}
+    # Map module_id to adoption rate (0.0 to 1.0). Default is 1.0
+    module_adoption_rates: Dict[str, float] = {}
 
 class DayConfig(BaseModel):
     name: str  # e.g., "Friday"
