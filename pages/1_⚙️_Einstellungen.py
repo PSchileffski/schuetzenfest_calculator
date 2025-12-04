@@ -3,7 +3,7 @@ import json
 import os
 import pandas as pd
 
-st.set_page_config(page_title="Modul-Editor", layout="wide")
+st.set_page_config(page_title="Einstellungen", layout="wide")
 
 MODULES_PATH = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'config', 'modules.json')
 
@@ -36,7 +36,7 @@ def save_modules(modules):
     with open(MODULES_PATH, 'w', encoding='utf-8') as f:
         json.dump(modules, f, indent=2, ensure_ascii=False)
 
-st.title("🛠️ Modul-Editor")
+st.title("⚙️ Einstellungen")
 
 if 'modules_data' not in st.session_state:
     st.session_state.modules_data = load_modules()
