@@ -72,6 +72,32 @@ def get_variant_name(vid):
 
 selected_variant_id = st.selectbox("Variante bearbeiten", variant_ids, format_func=get_variant_name)
 
+# Add New Variant Section
+with st.expander("➕ Neue Variante hinzufügen"):
+    col_new_1, col_new_2 = st.columns(2)
+    with col_new_1:
+        new_variant_name = st.text_input("Name der neuen Variante")
+    with col_new_2:
+        new_variant_id = st.text_input("ID der neuen Variante (z.B. 'premium_package')", help="Muss eindeutig sein, keine Leerzeichen")
+    
+    if st.button("Variante hinzufügen"):
+        if new_variant_name and new_variant_id:
+            # Check if ID exists
+            if any(v['id'] == new_variant_id for v in selected_module['variants']):
+                st.error("Diese ID existiert bereits!")
+            else:
+                new_variant = {
+                    "id": new_variant_id,
+                    "name": new_variant_name,
+                    "cost_items": [],
+                    "revenue_items": []
+                }
+                selected_module['variants'].append(new_variant)
+                st.success(f"Variante '{new_variant_name}' hinzugefügt!")
+                st.rerun()
+        else:
+            st.warning("Bitte Name und ID angeben.")
+
 if selected_variant_id:
     # Find variant
     variant = next(v for v in selected_module['variants'] if v['id'] == selected_variant_id)
