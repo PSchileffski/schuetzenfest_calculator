@@ -250,6 +250,32 @@
             "revenue_type": "per_visitor"
           }
         ]
+      },
+      {
+        "id": "5eur_min_consumption",
+        "name": "5€ Mindestverzehr",
+        "cost_items": [
+          {
+            "name": "2 Freigetränke",
+            "amount": 1.1,
+            "cost_type": "per_visitor",
+            "description": "EK Getränke"
+          },
+          {
+            "name": "GEMA",
+            "amount": 0.35,
+            "cost_type": "per_visitor",
+            "description": "7%"
+          }
+        ],
+        "revenue_items": [
+          {
+            "name": "5€ Eintritt",
+            "amount": 5,
+            "revenue_type": "per_visitor",
+            "description": null
+          }
+        ]
       }
     ]
   },
