@@ -23,7 +23,8 @@
             "amount": 180.0,
             "cost_type": "fixed"
           }
-        ]
+        ],
+        "revenue_items": []
       },
       {
         "id": "party_band_regional",
@@ -191,7 +192,8 @@
       {
         "id": "no_entry",
         "name": "Kein Eintritt",
-        "cost_items": []
+        "cost_items": [],
+        "revenue_items": []
       },
       {
         "id": "ten_euro_entry",
@@ -227,7 +229,7 @@
           },
           {
             "name": "Verzehrgutscheine (Druck)",
-            "amount": 0.5,
+            "amount": 0.2,
             "cost_type": "per_visitor"
           },
           {
