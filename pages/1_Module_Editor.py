@@ -21,6 +21,13 @@ COST_TYPE_MAPPING = {
 }
 COST_TYPE_MAPPING_REVERSE = {v: k for k, v in COST_TYPE_MAPPING.items()}
 
+REVENUE_TYPE_MAPPING = {
+    "fixed": "Pauschal / Fixeinnahme",
+    "per_visitor": "Pro Besucher",
+    "per_unit_sold": "Pro verkaufter Einheit"
+}
+REVENUE_TYPE_MAPPING_REVERSE = {v: k for k, v in REVENUE_TYPE_MAPPING.items()}
+
 def load_modules():
     with open(MODULES_PATH, 'r', encoding='utf-8') as f:
         return json.load(f)
@@ -143,6 +150,8 @@ if selected_variant_id:
     # First translate cost_type back to technical keys
     if not edited_df.empty:
         edited_df['cost_type'] = edited_df['cost_type'].map(lambda x: COST_TYPE_MAPPING_REVERSE.get(x, x))
+        # Replace NaN with None to ensure valid JSON and Pydantic compatibility
+        edited_df = edited_df.where(pd.notnull(edited_df), None)
 
     new_cost_items = edited_df.to_dict('records')
     # Clean up (remove NaN/None)
@@ -152,6 +161,52 @@ if selected_variant_id:
             cleaned_items.append(item)
             
     variant['cost_items'] = cleaned_items
+
+    # Revenue Items Editor
+    st.write("Einnahmen-Positionen:")
+    
+    # Convert to DataFrame for editing
+    revenue_items_df = pd.DataFrame(variant.get('revenue_items', []))
+    
+    if revenue_items_df.empty:
+        revenue_items_df = pd.DataFrame(columns=["name", "amount", "revenue_type", "description"])
+    else:
+        # Translate revenue_type for display
+        revenue_items_df['revenue_type'] = revenue_items_df['revenue_type'].map(lambda x: REVENUE_TYPE_MAPPING.get(x, x))
+    
+    # Configure column config
+    revenue_column_config = {
+        "name": st.column_config.TextColumn("Bezeichnung", required=True),
+        "amount": st.column_config.NumberColumn("Betrag (€)", min_value=0.0, format="%.2f €"),
+        "revenue_type": st.column_config.SelectboxColumn(
+            "Einnahmen-Art", 
+            options=list(REVENUE_TYPE_MAPPING.values()), 
+            required=True
+        ),
+        "description": st.column_config.TextColumn("Beschreibung")
+    }
+    
+    edited_revenue_df = st.data_editor(
+        revenue_items_df,
+        column_config=revenue_column_config,
+        num_rows="dynamic",
+        use_container_width=True,
+        key=f"revenue_editor_{selected_module['id']}_{variant['id']}"
+    )
+    
+    # Update variant with edited data
+    if not edited_revenue_df.empty:
+        edited_revenue_df['revenue_type'] = edited_revenue_df['revenue_type'].map(lambda x: REVENUE_TYPE_MAPPING_REVERSE.get(x, x))
+        # Replace NaN with None to ensure valid JSON and Pydantic compatibility
+        edited_revenue_df = edited_revenue_df.where(pd.notnull(edited_revenue_df), None)
+
+    new_revenue_items = edited_revenue_df.to_dict('records')
+    cleaned_revenue_items = []
+    for item in new_revenue_items:
+        if item['name']:
+            cleaned_revenue_items.append(item)
+            
+    variant['revenue_items'] = cleaned_revenue_items
 
 st.divider()
 

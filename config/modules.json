@@ -207,6 +207,13 @@
             "amount": 0.7,
             "cost_type": "per_visitor"
           }
+        ],
+        "revenue_items": [
+          {
+            "name": "Eintritt",
+            "amount": 10.0,
+            "revenue_type": "per_visitor"
+          }
         ]
       },
       {
@@ -227,6 +234,18 @@
             "name": "GEMA Eintrittsanteil (7% nach VR-Ö)",
             "amount": 1.05,
             "cost_type": "per_visitor"
+          }
+        ],
+        "revenue_items": [
+          {
+            "name": "Eintritt",
+            "amount": 15.0,
+            "revenue_type": "per_visitor"
+          },
+          {
+            "name": "Verzehrgutschein",
+            "amount": -5.0,
+            "revenue_type": "per_visitor"
           }
         ]
       }
@@ -1006,13 +1025,13 @@
             "name": "Zapfmeister (8 Std. á 30€)",
             "amount": 240.0,
             "cost_type": "fixed",
-            "description": NaN
+            "description": null
           },
           {
             "name": "1 Kellner (8 Std. á 20€)",
             "amount": 160.0,
             "cost_type": "fixed",
-            "description": NaN
+            "description": null
           },
           {
             "name": "2 Kellner (6 Std. á 20€)",
@@ -1113,25 +1132,25 @@
             "name": "Genehmigungen & Gebühren",
             "amount": 220.0,
             "cost_type": "fixed",
-            "description": NaN
+            "description": null
           },
           {
             "name": "Versicherungen (inkl. Unfall Helfer)",
             "amount": 450.0,
             "cost_type": "fixed",
-            "description": NaN
+            "description": null
           },
           {
             "name": "Werbung Print (Plakate/Banner/Flyer)",
             "amount": 75.0,
             "cost_type": "fixed",
-            "description": NaN
+            "description": null
           },
           {
             "name": "Werbung Online (Social Media Boosts)",
             "amount": 20.0,
             "cost_type": "fixed",
-            "description": NaN
+            "description": null
           },
           {
             "name": "Helfer-Verpflegung (Aufbau/Abbau/Orga)",
@@ -1143,13 +1162,13 @@
             "name": "Repräsentation (Blumen/Orden)",
             "amount": 250.0,
             "cost_type": "fixed",
-            "description": NaN
+            "description": null
           },
           {
             "name": "Sonstiges (Erste Hilfe/Kleinteile)",
             "amount": 100.0,
             "cost_type": "fixed",
-            "description": NaN
+            "description": null
           }
         ],
         "revenue_items": []

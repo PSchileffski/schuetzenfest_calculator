@@ -190,30 +190,6 @@ class Calculator:
         for day in scenario.days:
             # Entry ticket revenue based on entry module selection
             day_visitors = day.total_visitors
-            entry_variant_id = day.selected_modules.get("entry")
-            if entry_variant_id:
-                entry_module = self.modules_map.get("entry")
-                if entry_module:
-                    entry_variant = next((v for v in entry_module.variants if v.id == entry_variant_id), None)
-                    if entry_variant:
-                        entry_revenue = 0.0
-                        entry_name = ""
-                        
-                        if entry_variant_id == "ten_euro_entry":
-                            entry_revenue = 10.0 * day_visitors
-                            entry_name = f"Eintritt 10 € ({day.name})"
-                        elif entry_variant_id == "fifteen_euro_voucher":
-                            entry_revenue = 15.0 * day_visitors
-                            entry_name = f"Eintritt 15 € ({day.name})"
-                        
-                        if entry_revenue > 0:
-                            total_revenue += entry_revenue
-                            revenue_breakdown.append({
-                                "name": entry_name,
-                                "type": "per_visitor",
-                                "total": entry_revenue,
-                                "category": "Tickets/Entry"
-                            })
             
             # Day specific fixed/per_visitor revenue (e.g. Sponsoring for specific days)
             for item in day.day_specific_revenue:
@@ -235,12 +211,6 @@ class Calculator:
             day_consumption_revenue = 0.0
             day_consumption_cost = 0.0
             
-            # Check if there's a voucher system (15€ entry with 5€ voucher)
-            voucher_reduction = 0.0
-            entry_variant_id = day.selected_modules.get("entry")
-            if entry_variant_id == "fifteen_euro_voucher":
-                voucher_reduction = 5.0 * day_visitors
-            
             for persona_id, count in day.visitor_composition.items():
                 persona = self.personas_map.get(persona_id)
                 if not persona: continue
@@ -257,10 +227,7 @@ class Calculator:
                     day_consumption_cost += cost
 
             # Add day consumption to totals and breakdown
-            # Apply voucher reduction to revenue
-            net_consumption_revenue = day_consumption_revenue - voucher_reduction
-            
-            total_revenue += net_consumption_revenue
+            total_revenue += day_consumption_revenue
             total_cost += day_consumption_cost
             
             if day_consumption_revenue > 0:
@@ -268,16 +235,6 @@ class Calculator:
                     "name": f"Getränkeverkauf ({day.name})",
                     "type": "consumption",
                     "total": day_consumption_revenue,
-                    "category": f"Consumption-{day.name}"
-                })
-            
-            # Add voucher as negative revenue if applicable
-            if voucher_reduction > 0:
-                total_revenue -= voucher_reduction  # already subtracted above, this is just for display
-                revenue_breakdown.append({
-                    "name": f"Verzehrgutscheine ({day.name})",
-                    "type": "voucher",
-                    "total": -voucher_reduction,
                     "category": f"Consumption-{day.name}"
                 })
             
