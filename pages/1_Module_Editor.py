@@ -7,6 +7,20 @@ st.set_page_config(page_title="Modul-Editor", layout="wide")
 
 MODULES_PATH = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'config', 'modules.json')
 
+# Mappings for translation
+SCOPE_MAPPING = {
+    "global": "Global (Einmalig)",
+    "daily": "Täglich (pro Tag wählbar)"
+}
+SCOPE_MAPPING_REVERSE = {v: k for k, v in SCOPE_MAPPING.items()}
+
+COST_TYPE_MAPPING = {
+    "fixed": "Pauschal / Fixkosten",
+    "per_visitor": "Pro Besucher",
+    "per_hour": "Pro Stunde"
+}
+COST_TYPE_MAPPING_REVERSE = {v: k for k, v in COST_TYPE_MAPPING.items()}
+
 def load_modules():
     with open(MODULES_PATH, 'r', encoding='utf-8') as f:
         return json.load(f)
@@ -36,11 +50,17 @@ st.divider()
 # 2. Edit Module Details
 col1, col2 = st.columns(2)
 with col1:
-    new_module_name = st.text_input("Modul Name", selected_module['name'])
+    new_module_name = st.text_input("Modul Bezeichnung", selected_module['name'])
     selected_module['name'] = new_module_name
 with col2:
-    new_module_scope = st.selectbox("Scope", ["global", "daily"], index=0 if selected_module['scope'] == "global" else 1)
-    selected_module['scope'] = new_module_scope
+    # Scope selection with translation
+    current_scope_display = SCOPE_MAPPING.get(selected_module['scope'], selected_module['scope'])
+    selected_scope_display = st.selectbox(
+        "Geltungsbereich (Scope)", 
+        options=list(SCOPE_MAPPING.values()), 
+        index=list(SCOPE_MAPPING.values()).index(current_scope_display) if current_scope_display in SCOPE_MAPPING.values() else 0
+    )
+    selected_module['scope'] = SCOPE_MAPPING_REVERSE.get(selected_scope_display, "global")
 
 # 3. Variants Management
 st.subheader(f"Varianten für '{selected_module['name']}'")
@@ -57,7 +77,7 @@ if selected_variant_id:
     variant = next(v for v in selected_module['variants'] if v['id'] == selected_variant_id)
     
     # Variant Details
-    variant['name'] = st.text_input("Variante Name", variant['name'])
+    variant['name'] = st.text_input("Variante Bezeichnung", variant['name'])
     variant['id'] = st.text_input("Variante ID", variant['id'], disabled=True, help="IDs sollten nicht geändert werden")
     
     # Cost Items Editor
@@ -68,12 +88,19 @@ if selected_variant_id:
     
     if cost_items_df.empty:
         cost_items_df = pd.DataFrame(columns=["name", "amount", "cost_type", "description"])
+    else:
+        # Translate cost_type for display
+        cost_items_df['cost_type'] = cost_items_df['cost_type'].map(lambda x: COST_TYPE_MAPPING.get(x, x))
     
     # Configure column config
     column_config = {
         "name": st.column_config.TextColumn("Bezeichnung", required=True),
         "amount": st.column_config.NumberColumn("Betrag (€)", min_value=0.0, format="%.2f €"),
-        "cost_type": st.column_config.SelectboxColumn("Typ", options=["fixed", "per_visitor", "per_hour"], required=True),
+        "cost_type": st.column_config.SelectboxColumn(
+            "Kosten-Art", 
+            options=list(COST_TYPE_MAPPING.values()), 
+            required=True
+        ),
         "description": st.column_config.TextColumn("Beschreibung")
     }
     
@@ -87,6 +114,10 @@ if selected_variant_id:
     
     # Update variant with edited data
     # Convert back to list of dicts, removing empty rows if any
+    # First translate cost_type back to technical keys
+    if not edited_df.empty:
+        edited_df['cost_type'] = edited_df['cost_type'].map(lambda x: COST_TYPE_MAPPING_REVERSE.get(x, x))
+
     new_cost_items = edited_df.to_dict('records')
     # Clean up (remove NaN/None)
     cleaned_items = []
