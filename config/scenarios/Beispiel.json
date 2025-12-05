@@ -4,7 +4,7 @@
   "description": "Kleine Dorfkirmes mit DJ, Band und Alleinunterhalter",
   "days": [
     {
-      "name": "Tag 1 (Jugendparty)",
+      "name": "Tag 1 (Fr.)",
       "visitor_composition": {
         "schuetzenbruder": 20,
         "besucher": 30,
@@ -23,7 +23,7 @@
       "day_specific_revenue": []
     },
     {
-      "name": "Tag 2 (Schützenball)",
+      "name": "Tag 2 (Sa.)",
       "visitor_composition": {
         "schuetzenbruder": 40,
         "besucher": 120,
@@ -50,7 +50,7 @@
       ]
     },
     {
-      "name": "Tag 3 (Frühschoppen)",
+      "name": "Tag 3 (So.)",
       "visitor_composition": {
         "schuetzenbruder": 20,
         "besucher": 40,
@@ -69,7 +69,7 @@
       "day_specific_revenue": []
     },
     {
-      "name": "Tag 4 (Krönungsball)",
+      "name": "Tag 4 (Mo.)",
       "visitor_composition": {
         "schuetzenbruder": 30,
         "besucher": 120,
