@@ -4,7 +4,7 @@
   "description": "Fokus auf das Schützenwesen ohne Jugend-Disco am Freitag. Samstag Party, Sonntag Festzug, Montag traditioneller Frühschoppen.",
   "days": [
     {
-      "name": "Samstag (Festball)",
+      "name": "Tag 1 (Sa.)",
       "enabled": true,
       "visitor_composition": {
         "schuetzenbruder": 70,
@@ -24,7 +24,7 @@
       "day_specific_revenue": []
     },
     {
-      "name": "Sonntag (Festzug)",
+      "name": "Tag 2 (So.)",
       "enabled": true,
       "visitor_composition": {
         "schuetzenbruder": 80,
@@ -44,7 +44,7 @@
       "day_specific_revenue": []
     },
     {
-      "name": "Montag (Frühschoppen)",
+      "name": "Tag 3 (Mo.)",
       "enabled": true,
       "visitor_composition": {
         "schuetzenbruder": 60,
@@ -67,7 +67,7 @@
   "global_modules": {
     "location": "tent_4_gebund",
     "infrastructure": "tent_full_infra",
-    "equipment": "full_rental_gfgh",
+    "equipment": "tent_rez_infra",
     "decoration": "minimal_decoration",
     "transport": "minimal_transport",
     "admin": "admin_standard",

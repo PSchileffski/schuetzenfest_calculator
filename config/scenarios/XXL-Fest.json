@@ -4,7 +4,7 @@
   "description": "Maximales Programm zum Jubiläum. Premium-Bands, großes Zelt, aufwendige Deko und Werbung.",
   "days": [
     {
-      "name": "Freitag (Jugend-Event)",
+      "name": "Tag 1 (Fr.)",
       "enabled": true,
       "visitor_composition": {
         "schuetzenbruder": 30,
@@ -24,7 +24,7 @@
       "day_specific_revenue": []
     },
     {
-      "name": "Samstag (Gala-Abend)",
+      "name": "Tag 2 (Sa.)",
       "enabled": true,
       "visitor_composition": {
         "schuetzenbruder": 80,
@@ -44,7 +44,7 @@
       "day_specific_revenue": []
     },
     {
-      "name": "Sonntag (Großer Festzug)",
+      "name": "Tag 3 (So.)",
       "enabled": true,
       "visitor_composition": {
         "schuetzenbruder": 100,
@@ -64,7 +64,7 @@
       "day_specific_revenue": []
     },
     {
-      "name": "Montag (Königsfrühstück)",
+      "name": "Tag 4 (Mo.)",
       "enabled": true,
       "visitor_composition": {
         "schuetzenbruder": 80,

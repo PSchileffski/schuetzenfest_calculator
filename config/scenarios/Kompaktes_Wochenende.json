@@ -4,7 +4,7 @@
   "description": "Reduziertes Fest auf zwei Tage (Samstag & Sonntag), um Kosten zu sparen und Besucher zu bündeln. Kleineres Zelt.",
   "days": [
     {
-      "name": "Samstag (Party)",
+      "name": "Tag 1 (Sa.)",
       "enabled": true,
       "visitor_composition": {
         "schuetzenbruder": 60,
@@ -24,7 +24,7 @@
       "day_specific_revenue": []
     },
     {
-      "name": "Sonntag (Familientag)",
+      "name": "Tag 2 (So.)",
       "enabled": true,
       "visitor_composition": {
         "schuetzenbruder": 50,
@@ -45,8 +45,8 @@
     }
   ],
   "global_modules": {
-    "location": "tent_4_gebund",
-    "infrastructure": "tent_full_infra",
+    "location": "party_tent_rental",
+    "infrastructure": "tent_rez_infra",
     "equipment": "partial_equipment",
     "decoration": "minimal_decoration",
     "transport": "minimal_transport",
