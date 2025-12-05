@@ -1,0 +1,66 @@
+{
+  "id": "scenario_compact_weekend",
+  "name": "Kompaktes Wochenende (Sa+So)",
+  "description": "Reduziertes Fest auf zwei Tage (Samstag & Sonntag), um Kosten zu sparen und Besucher zu bündeln. Kleineres Zelt.",
+  "days": [
+    {
+      "name": "Samstag (Party)",
+      "enabled": true,
+      "visitor_composition": {
+        "schuetzenbruder": 60,
+        "besucher": 180,
+        "zuschauer": 10,
+        "teenie": 20
+      },
+      "duration_hours": 9,
+      "selected_modules": {
+        "music": "party_band_regional",
+        "security": "security_standard",
+        "entry": "ten_euro_entry",
+        "catering": "external_food_truck_provision",
+        "entertainment": "happy_hour_discount",
+        "personnel": "pro_medium"
+      },
+      "day_specific_revenue": []
+    },
+    {
+      "name": "Sonntag (Familientag)",
+      "enabled": true,
+      "visitor_composition": {
+        "schuetzenbruder": 50,
+        "besucher": 100,
+        "zuschauer": 80,
+        "teenie": 10
+      },
+      "duration_hours": 7,
+      "selected_modules": {
+        "music": "local_brass_band",
+        "security": "security_none",
+        "entry": "no_entry",
+        "catering": "coffee_cake_volunteer",
+        "entertainment": "kids_fun",
+        "personnel": "volunteers_bar"
+      },
+      "day_specific_revenue": []
+    }
+  ],
+  "global_modules": {
+    "location": "tent_4_gebund",
+    "infrastructure": "tent_full_infra",
+    "equipment": "partial_equipment",
+    "decoration": "minimal_decoration",
+    "transport": "minimal_transport",
+    "admin": "admin_basic"
+  },
+  "selected_variants": {},
+  "global_parameters": {},
+  "revenue_items": [
+    {
+      "name": "Sponsoring Lokal",
+      "amount": 1000.0,
+      "revenue_type": "fixed",
+      "description": null,
+      "consumption_per_visitor": null
+    }
+  ]
+}

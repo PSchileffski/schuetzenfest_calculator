@@ -1,0 +1,113 @@
+{
+  "id": "scenario_xxl",
+  "name": "Großes Schützenfest (4 Tage)",
+  "description": "Maximales Programm zum Jubiläum. Premium-Bands, großes Zelt, aufwendige Deko und Werbung.",
+  "days": [
+    {
+      "name": "Freitag (Jugend-Event)",
+      "enabled": true,
+      "visitor_composition": {
+        "schuetzenbruder": 30,
+        "besucher": 100,
+        "zuschauer": 0,
+        "teenie": 250
+      },
+      "duration_hours": 7,
+      "selected_modules": {
+        "music": "dj_premium_club",
+        "security": "security_extended",
+        "entry": "5eur_min_consumption",
+        "catering": "club_grill_simple",
+        "entertainment": "happy_hour_discount",
+        "personnel": "pro_medium"
+      },
+      "day_specific_revenue": []
+    },
+    {
+      "name": "Samstag (Gala-Abend)",
+      "enabled": true,
+      "visitor_composition": {
+        "schuetzenbruder": 80,
+        "besucher": 250,
+        "zuschauer": 20,
+        "teenie": 20
+      },
+      "duration_hours": 9,
+      "selected_modules": {
+        "music": "cover_band_premium",
+        "security": "security_extended",
+        "entry": "fifteen_euro_voucher",
+        "catering": "external_food_truck_provision",
+        "entertainment": "no_extras",
+        "personnel": "pro_large"
+      },
+      "day_specific_revenue": []
+    },
+    {
+      "name": "Sonntag (Großer Festzug)",
+      "enabled": true,
+      "visitor_composition": {
+        "schuetzenbruder": 100,
+        "besucher": 300,
+        "zuschauer": 400,
+        "teenie": 20
+      },
+      "duration_hours": 8,
+      "selected_modules": {
+        "music": "local_brass_band",
+        "security": "security_standard",
+        "entry": "no_entry",
+        "catering": "coffee_cake_volunteer",
+        "entertainment": "kids_fun",
+        "personnel": "volunteers_bar"
+      },
+      "day_specific_revenue": []
+    },
+    {
+      "name": "Montag (Königsfrühstück)",
+      "enabled": true,
+      "visitor_composition": {
+        "schuetzenbruder": 80,
+        "besucher": 100,
+        "zuschauer": 30,
+        "teenie": 0
+      },
+      "duration_hours": 6,
+      "selected_modules": {
+        "music": "alleinunterhalter",
+        "security": "security_none",
+        "entry": "no_entry",
+        "catering": "breakfast_buffet",
+        "entertainment": "tombola",
+        "personnel": "pro_small"
+      },
+      "day_specific_revenue": []
+    }
+  ],
+  "global_modules": {
+    "location": "tent_5_gebund",
+    "infrastructure": "tent_full_infra",
+    "equipment": "full_rental_gfgh",
+    "decoration": "full_decoration",
+    "transport": "full_transport",
+    "admin": "admin_growth"
+  },
+  "selected_variants": {},
+  "global_parameters": {},
+  "revenue_items": [
+    {
+      "name": "Großspender",
+      "amount": 3000.0,
+      "revenue_type": "fixed",
+      "description": null,
+      "consumption_per_visitor": null
+    },
+    {
+      "name": "Werbeeinnahmen Lokal",
+      "amount": 1500.0,
+      "revenue_type": "fixed",
+      "description": null,
+      "consumption_per_visitor": null
+    }
+  ]
+}

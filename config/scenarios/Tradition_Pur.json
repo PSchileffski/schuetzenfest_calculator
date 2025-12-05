@@ -1,0 +1,86 @@
+{
+  "id": "scenario_tradition",
+  "name": "Tradition Pur (Sa-Mo)",
+  "description": "Fokus auf das Schützenwesen ohne Jugend-Disco am Freitag. Samstag Party, Sonntag Festzug, Montag traditioneller Frühschoppen.",
+  "days": [
+    {
+      "name": "Samstag (Festball)",
+      "enabled": true,
+      "visitor_composition": {
+        "schuetzenbruder": 70,
+        "besucher": 130,
+        "zuschauer": 20,
+        "teenie": 10
+      },
+      "duration_hours": 8,
+      "selected_modules": {
+        "music": "party_band_regional",
+        "security": "security_standard",
+        "entry": "ten_euro_entry",
+        "catering": "external_food_truck_neutral",
+        "entertainment": "no_extras",
+        "personnel": "pro_medium"
+      },
+      "day_specific_revenue": []
+    },
+    {
+      "name": "Sonntag (Festzug)",
+      "enabled": true,
+      "visitor_composition": {
+        "schuetzenbruder": 80,
+        "besucher": 150,
+        "zuschauer": 200,
+        "teenie": 0
+      },
+      "duration_hours": 6,
+      "selected_modules": {
+        "music": "local_brass_band",
+        "security": "entry_security",
+        "entry": "no_entry",
+        "catering": "coffee_cake_volunteer",
+        "entertainment": "kids_fun_bdsj",
+        "personnel": "volunteers_bar"
+      },
+      "day_specific_revenue": []
+    },
+    {
+      "name": "Montag (Frühschoppen)",
+      "enabled": true,
+      "visitor_composition": {
+        "schuetzenbruder": 60,
+        "besucher": 40,
+        "zuschauer": 10,
+        "teenie": 0
+      },
+      "duration_hours": 6,
+      "selected_modules": {
+        "music": "local_brass_band",
+        "security": "security_none",
+        "entry": "no_entry",
+        "catering": "breakfast_buffet",
+        "entertainment": "tombola",
+        "personnel": "pro_small"
+      },
+      "day_specific_revenue": []
+    }
+  ],
+  "global_modules": {
+    "location": "tent_4_gebund",
+    "infrastructure": "tent_full_infra",
+    "equipment": "full_rental_gfgh",
+    "decoration": "minimal_decoration",
+    "transport": "minimal_transport",
+    "admin": "admin_standard"
+  },
+  "selected_variants": {},
+  "global_parameters": {},
+  "revenue_items": [
+    {
+      "name": "Spenden",
+      "amount": 500.0,
+      "revenue_type": "fixed",
+      "description": null,
+      "consumption_per_visitor": null
+    }
+  ]
+}
