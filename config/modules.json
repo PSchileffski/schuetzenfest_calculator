@@ -1249,5 +1249,64 @@
         "revenue_items": []
       }
     ]
+  },
+  {
+    "id": "financing",
+    "name": "Finanzierung & Sponsoring",
+    "scope": "global",
+    "variants": [
+      {
+        "id": "no_sponsoring",
+        "name": "Kein Sponsoring",
+        "cost_items": [],
+        "revenue_items": []
+      },
+      {
+        "id": "sponsoring_small",
+        "name": "Kleines Sponsoring (Lokal)",
+        "cost_items": [],
+        "revenue_items": [
+          {
+            "name": "Sponsoring Lokal",
+            "amount": 1000.0,
+            "revenue_type": "fixed"
+          }
+        ]
+      },
+      {
+        "id": "sponsoring_medium",
+        "name": "Mittleres Sponsoring (Standard)",
+        "cost_items": [],
+        "revenue_items": [
+          {
+            "name": "Sponsoring Lokal",
+            "amount": 1500.0,
+            "revenue_type": "fixed"
+          }
+        ]
+      },
+      {
+        "id": "sponsoring_large",
+        "name": "Großes Sponsoring (Jubiläum)",
+        "cost_items": [],
+        "revenue_items": [
+          {
+            "name": "Sponsoring Großspender",
+            "amount": 3000.0,
+            "revenue_type": "fixed"
+          },
+          {
+            "name": "Festschrift Anzeigen",
+            "amount": 1500.0,
+            "revenue_type": "fixed"
+          },
+          {
+            "name": "Spenden Marschverpflegung",
+            "amount": 500.0,
+            "revenue_type": "fixed"
+          }
+        ]
+      }
+    ]
   }
 ]

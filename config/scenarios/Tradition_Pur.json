@@ -70,17 +70,10 @@
     "equipment": "full_rental_gfgh",
     "decoration": "minimal_decoration",
     "transport": "minimal_transport",
-    "admin": "admin_standard"
+    "admin": "admin_standard",
+    "financing": "sponsoring_medium"
   },
   "selected_variants": {},
   "global_parameters": {},
-  "revenue_items": [
-    {
-      "name": "Spenden",
-      "amount": 500.0,
-      "revenue_type": "fixed",
-      "description": null,
-      "consumption_per_visitor": null
-    }
-  ]
+  "revenue_items": []
 }

@@ -90,24 +90,11 @@
     "equipment": "full_rental_gfgh",
     "decoration": "full_decoration",
     "transport": "full_transport",
-    "admin": "admin_growth"
+    "admin": "admin_growth",
+    "financing": "sponsoring_large"
   },
   "selected_variants": {},
   "global_parameters": {},
-  "revenue_items": [
-    {
-      "name": "Großspender",
-      "amount": 3000.0,
-      "revenue_type": "fixed",
-      "description": null,
-      "consumption_per_visitor": null
-    },
-    {
-      "name": "Werbeeinnahmen Lokal",
-      "amount": 1500.0,
-      "revenue_type": "fixed",
-      "description": null,
-      "consumption_per_visitor": null
-    }
-  ]
+  "revenue_items": []
+}
 }
