@@ -1028,7 +1028,7 @@
     "scope": "daily",
     "variants": [
       {
-        "id": "volunteers_friday",
+        "id": "volunteers_bar",
         "name": "Ehrenamtlich (Vereinsmitglieder)",
         "cost_items": [
           {
