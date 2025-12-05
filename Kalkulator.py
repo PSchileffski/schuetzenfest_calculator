@@ -14,6 +14,22 @@ MODULES_PATH = os.path.join(BASE_PATH, 'config', 'modules.json')
 MASTER_DATA_PATH = os.path.join(BASE_PATH, 'config', 'master_data.json')
 SCENARIOS_DIR = os.path.join(BASE_PATH, 'config', 'scenarios')
 
+# Mappings for translation
+COST_TYPE_MAPPING = {
+    "fixed": "Fixkosten",
+    "per_visitor": "Pro Besucher",
+    "per_hour": "Pro Stunde",
+    "variable": "Variabel"
+}
+
+REVENUE_TYPE_MAPPING = {
+    "fixed": "Pauschal",
+    "per_visitor": "Pro Besucher",
+    "per_unit_sold": "Pro Verkauf",
+    "consumption": "Verzehr",
+    "voucher": "Gutschein"
+}
+
 # Load Calculator
 @st.cache_resource
 def get_calculator():
@@ -385,7 +401,7 @@ if selected_scenario_name:
                     detailed_rows.append({
                         "Baustein": module['module'],
                         "Position": item['name'],
-                        "Typ": item['type'],
+                        "Typ": COST_TYPE_MAPPING.get(item['type'], item['type']),
                         "Betrag": f"{item['total']:.2f} €"
                     })
             st.dataframe(pd.DataFrame(detailed_rows), width='stretch')
@@ -397,11 +413,13 @@ if selected_scenario_name:
                 st.markdown(f"### {day.name}")
                 detailed_rows = []
                 for module in day_costs[day.name]:
+                    # Remove day name from module name if present
+                    module_name = module['module'].replace(f" ({day.name})", "")
                     for item in module['items']:
                         detailed_rows.append({
-                            "Baustein": module['module'],
+                            "Baustein": module_name,
                             "Position": item['name'],
-                            "Typ": item['type'],
+                            "Typ": COST_TYPE_MAPPING.get(item['type'], item['type']),
                             "Betrag": f"{item['total']:.2f} €"
                         })
                 st.dataframe(pd.DataFrame(detailed_rows), width='stretch')
@@ -425,14 +443,33 @@ if selected_scenario_name:
         # Show global revenue
         if global_revenue:
             st.markdown("### Übergreifend")
-            st.dataframe(pd.DataFrame(global_revenue), width='stretch')
+            # Process global revenue rows for translation
+            processed_global_rows = []
+            for item in global_revenue:
+                processed_global_rows.append({
+                    "Bezeichnung": item['name'],
+                    "Typ": REVENUE_TYPE_MAPPING.get(item['type'], item['type']),
+                    "Betrag": f"{item['total']:.2f} €",
+                    "Kategorie": item.get('category', '')
+                })
+            st.dataframe(pd.DataFrame(processed_global_rows), width='stretch')
             st.markdown(f"**Summe Übergreifend:** {sum(x['total'] for x in global_revenue):,.2f} €")
         
         # Show revenue per day
         for day in scenario.days:
             if day_revenue[day.name]:
                 st.markdown(f"### {day.name}")
-                st.dataframe(pd.DataFrame(day_revenue[day.name]), width='stretch')
+                # Process rows to remove day name redundancy and format nicely
+                processed_rows = []
+                for item in day_revenue[day.name]:
+                    clean_name = item['name'].replace(f" ({day.name})", "")
+                    processed_rows.append({
+                        "Bezeichnung": clean_name,
+                        "Typ": REVENUE_TYPE_MAPPING.get(item['type'], item['type']),
+                        "Betrag": f"{item['total']:.2f} €",
+                        "Kategorie": item.get('category', '')
+                    })
+                st.dataframe(pd.DataFrame(processed_rows), width='stretch')
                 st.markdown(f"**Summe {day.name}:** {sum(x['total'] for x in day_revenue[day.name]):,.2f} €")
 
     with tab3:
