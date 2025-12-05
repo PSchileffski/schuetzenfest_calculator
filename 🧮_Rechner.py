@@ -32,10 +32,18 @@ REVENUE_TYPE_MAPPING = {
 
 # Load Calculator
 @st.cache_resource
-def get_calculator():
+def get_calculator(modules_mtime, master_data_mtime):
     return Calculator(MODULES_PATH, MASTER_DATA_PATH)
 
-calculator = get_calculator()
+# Get modification times to invalidate cache on file change
+try:
+    modules_mtime = os.path.getmtime(MODULES_PATH)
+    master_data_mtime = os.path.getmtime(MASTER_DATA_PATH)
+except FileNotFoundError:
+    modules_mtime = 0
+    master_data_mtime = 0
+
+calculator = get_calculator(modules_mtime, master_data_mtime)
 
 # Helper to load scenarios (no cache to always get fresh data)
 def load_scenarios():
