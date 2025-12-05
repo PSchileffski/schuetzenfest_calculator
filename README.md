@@ -44,14 +44,14 @@ Die Benutzeroberfläche ist als Multi-Page Streamlit App aufgebaut:
 
 3.  Anwendung starten:
     ```bash
-    streamlit run Kalkulator.py
+    streamlit run 🧮_Rechner.py
     ```
 
 ## 📂 Projektstruktur
 
 ```
 .
-├── Kalkulator.py               # Hauptanwendung (Einstiegspunkt)
+├── 🧮_Rechner.py               # Hauptanwendung (Einstiegspunkt)
 ├── APP_MANUAL.md               # Benutzerhandbuch (im Frontend eingebunden)
 ├── config/                     # Datenverzeichnis
 │   ├── master_data.json        # Produkte & Personas
