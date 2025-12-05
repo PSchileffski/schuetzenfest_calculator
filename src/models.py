@@ -64,6 +64,7 @@ class Persona(BaseModel):
 
 class DayConfig(BaseModel):
     name: str  # e.g., "Friday"
+    enabled: bool = True
     # Map persona_id to count
     visitor_composition: Dict[str, int] = {}
     duration_hours: int

@@ -170,6 +170,15 @@ if selected_scenario_name:
 
     for day in scenario.days:
         with st.sidebar.expander(f"{day.name}", expanded=False):
+            # Enable/Disable Day
+            day_enabled = st.checkbox("Tag aktiv", value=day.enabled, key=f"enable_{day.name}")
+            
+            if not day_enabled:
+                st.caption("Dieser Tag wird in der Berechnung ignoriert.")
+                updated_day = day.model_copy(update={"enabled": False})
+                updated_days.append(updated_day)
+                continue
+
             # 1. Modules
             st.markdown("**Bausteine**")
             day_modules_selection = day.selected_modules.copy()
@@ -280,7 +289,8 @@ if selected_scenario_name:
             
             updated_day = day.model_copy(update={
                 "visitor_composition": new_composition,
-                "selected_modules": day_modules_selection
+                "selected_modules": day_modules_selection,
+                "enabled": True
             })
             updated_days.append(updated_day)
     
@@ -314,7 +324,8 @@ if selected_scenario_name:
         
         # Calculate per-day totals
         day_totals = {}
-        for day in scenario.days:
+        active_days = [d for d in scenario.days if d.enabled]
+        for day in active_days:
             day_costs = sum(x['cost'] for x in result['breakdown'] if x.get('scope') == day.name)
             day_revenue = sum(x['total'] for x in result['revenue_breakdown'] 
                             if f"({day.name})" in x['name'] or x.get('category') == f"Consumption-{day.name}")
@@ -340,7 +351,7 @@ if selected_scenario_name:
         })
         
         # Add day rows
-        for day in scenario.days:
+        for day in active_days:
             totals = day_totals[day.name]
             overview_data.append({
                 "Bereich": day.name,
@@ -381,7 +392,7 @@ if selected_scenario_name:
                 "Einnahmen": global_revenue_total
             })
             
-            for day in scenario.days:
+            for day in active_days:
                 totals = day_totals[day.name]
                 chart_rows_1.append({
                     "Bereich": day.name,
@@ -402,7 +413,7 @@ if selected_scenario_name:
                 "Saldo": global_revenue_total - global_costs_total
             })
             
-            for day in scenario.days:
+            for day in active_days:
                 totals = day_totals[day.name]
                 chart_rows_2.append({
                     "Bereich": day.name,
@@ -418,7 +429,7 @@ if selected_scenario_name:
         
         # Group breakdown by scope
         global_costs = [x for x in result['breakdown'] if x.get('scope') == 'Global']
-        day_costs = {day.name: [] for day in scenario.days}
+        day_costs = {day.name: [] for day in scenario.days if day.enabled}
         for item in result['breakdown']:
             scope = item.get('scope')
             if scope != 'Global' and scope in day_costs:
@@ -440,7 +451,7 @@ if selected_scenario_name:
             st.markdown(f"**Summe Übergreifend:** {sum(x['cost'] for x in global_costs):,.2f} €")
         
         # Show costs per day
-        for day in scenario.days:
+        for day in [d for d in scenario.days if d.enabled]:
             if day_costs[day.name]:
                 st.markdown(f"### {day.name}")
                 detailed_rows = []
@@ -488,7 +499,7 @@ if selected_scenario_name:
             st.markdown(f"**Summe Übergreifend:** {sum(x['total'] for x in global_revenue):,.2f} €")
         
         # Show revenue per day
-        for day in scenario.days:
+        for day in [d for d in scenario.days if d.enabled]:
             if day_revenue[day.name]:
                 st.markdown(f"### {day.name}")
                 # Process rows to remove day name redundancy and format nicely
@@ -511,7 +522,7 @@ if selected_scenario_name:
         st.json(scenario.global_modules)
         
         st.markdown("### Tages-Konfiguration")
-        for day in scenario.days:
+        for day in [d for d in scenario.days if d.enabled]:
             with st.expander(f"{day.name} - Details"):
                 col_a, col_b = st.columns(2)
                 with col_a:

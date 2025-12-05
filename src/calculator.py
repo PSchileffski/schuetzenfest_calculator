@@ -29,13 +29,16 @@ class Calculator:
         total_revenue = 0.0
         revenue_breakdown = []
 
+        # Filter enabled days
+        active_days = [d for d in scenario.days if d.enabled]
+
         # Calculate total visitors and hours for defaults
-        total_visitors = sum(d.total_visitors for d in scenario.days)
-        total_hours = sum(d.duration_hours for d in scenario.days)
+        total_visitors = sum(d.total_visitors for d in active_days)
+        total_hours = sum(d.duration_hours for d in active_days)
         
         # Calculate total visitor composition for global modules
         total_visitor_composition = {}
-        for day in scenario.days:
+        for day in active_days:
             for pid, count in day.visitor_composition.items():
                 total_visitor_composition[pid] = total_visitor_composition.get(pid, 0) + count
 
@@ -140,7 +143,7 @@ class Calculator:
             revenue_breakdown.extend(rev_items)
 
         # 2. Calculate Day Specific Modules
-        for day in scenario.days:
+        for day in active_days:
             for module_id, variant_id in day.selected_modules.items():
                 module = self.modules_map.get(module_id)
                 if not module: continue
@@ -187,7 +190,7 @@ class Calculator:
             })
 
         # 2b. Day Specific Revenue & Consumption
-        for day in scenario.days:
+        for day in active_days:
             # Entry ticket revenue based on entry module selection
             day_visitors = day.total_visitors
             
