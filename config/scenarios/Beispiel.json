@@ -1,10 +1,10 @@
 {
   "id": "scenario_last_year",
-  "name": "2025",
+  "name": "Beispiel",
   "description": "Kleine Dorfkirmes mit DJ, Band und Alleinunterhalter",
   "days": [
     {
-      "name": "Freitag (Jugendparty)",
+      "name": "Tag 1 (Jugendparty)",
       "visitor_composition": {
         "schuetzenbruder": 20,
         "besucher": 30,
@@ -13,16 +13,17 @@
       },
       "duration_hours": 6,
       "selected_modules": {
-        "music": "dj_booking",
-        "security": "high_security",
+        "music": "dj_party",
+        "security": "security_basic",
         "entry": "no_entry",
-        "catering": "full_kitchen",
-        "entertainment": "games_prizes"
+        "catering": "club_grill_simple",
+        "entertainment": "happy_hour_discount",
+        "personnel": "volunteers_friday"
       },
       "day_specific_revenue": []
     },
     {
-      "name": "Samstag (Ball)",
+      "name": "Tag 2 (Schützenball)",
       "visitor_composition": {
         "schuetzenbruder": 40,
         "besucher": 120,
@@ -31,11 +32,12 @@
       },
       "duration_hours": 8,
       "selected_modules": {
-        "music": "live_band_top",
-        "security": "medium_security",
-        "entry": "no_entry",
-        "catering": "full_kitchen",
-        "entertainment": "games_prizes"
+        "music": "party_band_regional",
+        "security": "entry_security",
+        "entry": "fifteen_euro_voucher",
+        "catering": "external_food_truck_neutral",
+        "entertainment": "happy_hour_free_beer",
+        "personnel": "pro_medium"
       },
       "day_specific_revenue": [
         {
@@ -48,49 +50,51 @@
       ]
     },
     {
-      "name": "Sonntag (Frühschoppen)",
+      "name": "Tag 3 (Frühschoppen)",
       "visitor_composition": {
         "schuetzenbruder": 20,
         "besucher": 40,
         "zuschauer": 60,
         "teenie": 0
       },
-      "duration_hours": 6,
+      "duration_hours": 8,
       "selected_modules": {
-        "music": "local_band",
-        "security": "volunteer_security",
+        "music": "music_streaming",
+        "security": "security_none",
         "entry": "no_entry",
-        "catering": "full_kitchen",
-        "entertainment": "games_prizes"
+        "catering": "breakfast_buffet",
+        "entertainment": "no_extras",
+        "personnel": "pro_small"
       },
       "day_specific_revenue": []
     },
     {
-      "name": "Montag (Krönung)",
+      "name": "Tag 4 (Krönungsball)",
       "visitor_composition": {
         "schuetzenbruder": 30,
         "besucher": 120,
         "zuschauer": 20,
         "teenie": 0
       },
-      "duration_hours": 5,
+      "duration_hours": 7,
       "selected_modules": {
-        "music": "solo_entertainer",
-        "security": "volunteer_security",
+        "music": "alleinunterhalter",
+        "security": "security_none",
         "entry": "no_entry",
-        "catering": "full_kitchen",
-        "entertainment": "games_prizes"
+        "catering": "external_food_truck_neutral",
+        "entertainment": "no_extras",
+        "personnel": "pro_medium"
       },
       "day_specific_revenue": []
     }
   ],
   "global_modules": {
-    "location": "kirmes_tent",
-    "infrastructure": "tent_infra",
-    "equipment": "rental_equipment",
+    "location": "tent_5_gebund",
+    "infrastructure": "tent_full_infra",
+    "equipment": "full_rental_gfgh",
     "decoration": "minimal_decoration",
-    "transport": "full_transport",
-    "admin": "standard_admin"
+    "transport": "minimal_transport",
+    "admin": "admin_standard"
   },
   "selected_variants": {},
   "global_parameters": {},
