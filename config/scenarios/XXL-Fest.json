@@ -1,6 +1,6 @@
 {
   "id": "scenario_xxl",
-  "name": "Großes Schützenfest (4 Tage)",
+  "name": "Großes Schützenfest XXL(4 Tage)",
   "description": "Maximales Programm zum Jubiläum. Premium-Bands, großes Zelt, aufwendige Deko und Werbung.",
   "days": [
     {
@@ -96,5 +96,4 @@
   "selected_variants": {},
   "global_parameters": {},
   "revenue_items": []
-}
 }
