@@ -103,20 +103,36 @@ if selected_scenario_name:
             # Calculate total cost for this variant
             total_cost = sum(item.amount for item in v.cost_items if item.cost_type == 'fixed')
             
-            # Build detailed cost breakdown for help text
-            cost_details = []
-            for item in v.cost_items:
-                if item.cost_type == 'fixed':
-                    cost_details.append(f"• {item.name}: {item.amount:.0f} €")
-                elif item.cost_type == 'per_visitor':
-                    cost_details.append(f"• {item.name}: {item.amount:.2f} € pro Besucher")
-                elif item.cost_type == 'per_hour':
-                    cost_details.append(f"• {item.name}: {item.amount:.2f} € pro Stunde")
+            # Build detailed breakdown for help text
+            details = []
+            
+            # Costs
+            if v.cost_items:
+                details.append("Kosten:")
+                for item in v.cost_items:
+                    if item.cost_type == 'fixed':
+                        details.append(f"• {item.name}: {item.amount:.0f} €")
+                    elif item.cost_type == 'per_visitor':
+                        details.append(f"• {item.name}: {item.amount:.2f} € pro Besucher")
+                    elif item.cost_type == 'per_hour':
+                        details.append(f"• {item.name}: {item.amount:.2f} € pro Stunde")
+            
+            # Revenues
+            if v.revenue_items:
+                if details: details.append("") # Spacer
+                details.append("Einnahmen:")
+                for item in v.revenue_items:
+                    if item.revenue_type == 'fixed':
+                        details.append(f"• {item.name}: {item.amount:.0f} €")
+                    elif item.revenue_type == 'per_visitor':
+                        details.append(f"• {item.name}: {item.amount:.2f} € pro Besucher")
+                    elif item.revenue_type == 'per_unit_sold':
+                        details.append(f"• {item.name}: {item.amount:.2f} € pro Verkauf")
             
             display_name = f"{v.name} ({total_cost:.0f} €)" if total_cost > 0 else v.name
             variant_options[display_name] = v.id
             variant_id_to_name[v.id] = display_name
-            variant_details[v.id] = "\n".join(cost_details) if cost_details else "Keine Kosten"
+            variant_details[v.id] = "\n".join(details) if details else "Keine Kosten/Einnahmen"
         
         # Default to first if not found
         default_idx = 0
@@ -135,7 +151,7 @@ if selected_scenario_name:
         # Get selected variant ID and show its details
         selected_variant_id = variant_options[selected_name]
         help_text = variant_details.get(selected_variant_id, "")
-        if help_text and help_text != "Keine Kosten":
+        if help_text and help_text != "Keine Kosten/Einnahmen":
             st.sidebar.caption(f"ℹ️ {help_text}")
         
         global_modules_selection[module.id] = selected_variant_id
@@ -168,19 +184,35 @@ if selected_scenario_name:
                     # Calculate total cost for this variant
                     total_cost = sum(item.amount for item in v.cost_items if item.cost_type == 'fixed')
                     
-                    # Build detailed cost breakdown for help text
-                    cost_details = []
-                    for item in v.cost_items:
-                        if item.cost_type == 'fixed':
-                            cost_details.append(f"• {item.name}: {item.amount:.0f} €")
-                        elif item.cost_type == 'per_visitor':
-                            cost_details.append(f"• {item.name}: {item.amount:.2f} € pro Besucher")
-                        elif item.cost_type == 'per_hour':
-                            cost_details.append(f"• {item.name}: {item.amount:.2f} € pro Stunde")
+                    # Build detailed breakdown for help text
+                    details = []
+                    
+                    # Costs
+                    if v.cost_items:
+                        details.append("Kosten:")
+                        for item in v.cost_items:
+                            if item.cost_type == 'fixed':
+                                details.append(f"• {item.name}: {item.amount:.0f} €")
+                            elif item.cost_type == 'per_visitor':
+                                details.append(f"• {item.name}: {item.amount:.2f} € pro Besucher")
+                            elif item.cost_type == 'per_hour':
+                                details.append(f"• {item.name}: {item.amount:.2f} € pro Stunde")
+                    
+                    # Revenues
+                    if v.revenue_items:
+                        if details: details.append("") # Spacer
+                        details.append("Einnahmen:")
+                        for item in v.revenue_items:
+                            if item.revenue_type == 'fixed':
+                                details.append(f"• {item.name}: {item.amount:.0f} €")
+                            elif item.revenue_type == 'per_visitor':
+                                details.append(f"• {item.name}: {item.amount:.2f} € pro Besucher")
+                            elif item.revenue_type == 'per_unit_sold':
+                                details.append(f"• {item.name}: {item.amount:.2f} € pro Verkauf")
                     
                     display_name = f"{v.name} ({total_cost:.0f} €)" if total_cost > 0 else v.name
                     variant_options[display_name] = v.id
-                    variant_details[v.id] = "\n".join(cost_details) if cost_details else "Keine Kosten"
+                    variant_details[v.id] = "\n".join(details) if details else "Keine Kosten/Einnahmen"
                 
                 # Default logic: 
                 # If not set for day, pick "none"/"no_entry" if exists, else first
@@ -210,7 +242,7 @@ if selected_scenario_name:
                 # Get selected variant ID and show its details
                 selected_variant_id = variant_options[selected_name]
                 help_text = variant_details.get(selected_variant_id, "")
-                if help_text and help_text != "Keine Kosten":
+                if help_text and help_text != "Keine Kosten/Einnahmen":
                     st.caption(f"ℹ️ {help_text}")
                 
                 day_modules_selection[module.id] = selected_variant_id
