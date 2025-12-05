@@ -215,3 +215,15 @@ if st.button("💾 Änderungen speichern", type="primary"):
     st.success("Module wurden erfolgreich gespeichert!")
     # Reload to ensure consistency
     st.session_state.modules_data = load_modules()
+
+# Download Button for Persistence
+st.markdown("### Export für GitHub")
+st.markdown("Da Änderungen in der Cloud-Umgebung flüchtig sind, laden Sie die Konfiguration herunter und speichern Sie sie in Ihrem Git-Repository unter `config/modules.json`.")
+
+json_str = json.dumps(modules, indent=2, ensure_ascii=False)
+st.download_button(
+    label="📥 modules.json herunterladen",
+    data=json_str,
+    file_name="modules.json",
+    mime="application/json"
+)
